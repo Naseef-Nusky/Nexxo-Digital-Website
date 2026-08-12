@@ -1,1 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Source Sans 3", sans-serif;
+  --color-ink: #000000;
+  --color-ink-soft: #0a0a0a;
+  --color-navy: #020818;
+  --color-panel: #111111;
+  --color-mist: #f2f4f8;
+  --color-slate: #6b7280;
+  --color-blue: #0057ff;
+  --color-cyan: #00c2ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: #0a0a0a;
+  background: #f2f4f8;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-blue) 40%, white);
+  color: #000;
+}
+
+.bg-brand {
+  background-image: linear-gradient(135deg, #00c2ff 0%, #1a6cff 45%, #0057ff 100%);
+}
+
+.text-brand {
+  background-image: linear-gradient(135deg, #00c2ff 0%, #0057ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.7s ease-out both;
+}
+
+.animate-rise-delay {
+  animation: rise 0.8s ease-out 0.12s both;
+}
+
+.animate-rise-delay-2 {
+  animation: rise 0.8s ease-out 0.24s both;
+}
