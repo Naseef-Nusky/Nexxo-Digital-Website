@@ -592,52 +592,78 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#071525] px-5 py-20 text-white md:px-8 md:py-28">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(0,194,255,0.28),transparent_42%),radial-gradient(circle_at_85%_80%,rgba(0,87,255,0.32),transparent_48%)]" />
+      <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_0%,rgba(0,194,255,0.12),transparent_40%),radial-gradient(circle_at_88%_100%,rgba(0,87,255,0.1),transparent_45%)]" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
+
         <div className="relative mx-auto max-w-6xl">
           <div className="mx-auto max-w-3xl text-center">
             <SectionHeading
-              light
               className="text-center"
               eyebrow="FROM SEARCH TO SALE"
               title="We Build the Entire Journey"
             />
-            <p className="mt-6 text-base text-white/75 md:text-xl">
+            <p className="mt-6 text-base text-slate md:text-xl">
               Someone searches <GoogleText />.
             </p>
           </div>
 
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
-            {journey.map((step) => (
-              <div
-                key={step.num}
-                className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 md:p-6"
-              >
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand font-display text-sm font-bold text-white">
-                  {step.num}
-                </span>
-                <h3 className="mt-4 font-display text-lg font-bold tracking-tight text-white">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/65 md:text-base">
-                  {step.body}
-                </p>
-              </div>
-            ))}
-          </div>
+          <ol className="relative mt-14 grid gap-0 md:mt-20 lg:grid-cols-4 lg:gap-6">
+            {/* Desktop connector line */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute top-[2.15rem] right-[12.5%] left-[12.5%] hidden h-px bg-gradient-to-r from-cyan/20 via-blue/50 to-cyan/20 lg:block"
+            />
 
-          <div className="mx-auto mt-14 max-w-2xl text-center">
+            {journey.map((step, index) => (
+              <li
+                key={step.num}
+                className="relative flex gap-5 py-6 first:pt-0 last:pb-0 lg:flex-col lg:items-center lg:gap-0 lg:py-0 lg:text-center"
+              >
+                {/* Mobile vertical connector */}
+                {index < journey.length - 1 && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute top-14 bottom-0 left-[1.15rem] w-px bg-gradient-to-b from-cyan/50 to-blue/20 lg:hidden"
+                  />
+                )}
+
+                <div className="relative z-10 flex shrink-0 flex-col items-center lg:mb-8">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-navy font-display text-xs font-bold tracking-wide text-cyan ring-4 ring-mist lg:h-11 lg:w-11 lg:text-sm">
+                    {step.num}
+                  </span>
+                </div>
+
+                <div className="min-w-0 flex-1 lg:px-2">
+                  <p
+                    aria-hidden="true"
+                    className="mb-2 hidden font-display text-5xl font-extrabold leading-none text-ink/[0.06] lg:block"
+                  >
+                    {step.num}
+                  </p>
+                  <h3 className="font-display text-lg font-bold tracking-tight text-ink md:text-xl">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate md:text-[0.95rem]">
+                    {step.body}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <div className="mx-auto mt-14 max-w-2xl text-center md:mt-20">
             <div className="mx-auto mb-5 h-1 w-14 rounded-full bg-brand" />
-            <p className="text-base text-white/80 md:text-xl">
+            <p className="text-base text-slate md:text-xl">
               That’s the Nexxo approach.
             </p>
             <p className="mt-4 font-display text-2xl font-bold tracking-[0.08em] whitespace-nowrap md:text-3xl">
               <span className="text-brand">BUILD</span>
-              <span className="text-white/40">.</span>{' '}
+              <span className="text-ink/25">.</span>{' '}
               <span className="text-brand">RANK</span>
-              <span className="text-white/40">.</span>{' '}
+              <span className="text-ink/25">.</span>{' '}
               <span className="text-brand">GROW</span>
-              <span className="text-white/40">.</span>
+              <span className="text-ink/25">.</span>
             </p>
           </div>
         </div>
