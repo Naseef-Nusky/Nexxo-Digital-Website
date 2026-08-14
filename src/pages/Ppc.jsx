@@ -20,7 +20,7 @@ const ppcIncludes = [
 export default function Ppc() {
   return (
     <main>
-      <section className="relative overflow-hidden bg-ink px-5 pt-32 pb-20 text-white md:px-8 md:pt-36 md:pb-28">
+      <section className="relative flex min-h-[58vh] items-center overflow-hidden bg-ink px-5 pt-28 pb-16 text-white md:block md:min-h-0 md:px-8 md:pt-36 md:pb-28">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(0,194,255,0.28),transparent_42%),radial-gradient(circle_at_82%_12%,rgba(0,87,255,0.4),transparent_48%),linear-gradient(160deg,#000000_0%,#000000_55%,#050505_100%)]" />
         <img
           src="/Google-Ads-hero-BG.png"
@@ -29,14 +29,14 @@ export default function Ppc() {
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-ink/50" />
-        <div className="relative mx-auto w-full max-w-4xl">
+        <div className="relative mx-auto w-full max-w-4xl text-center">
           <p className="animate-rise font-display text-sm font-semibold tracking-[0.14em] md:tracking-[0.24em] text-cyan uppercase">
             <ColorGoogle text="PPC & GOOGLE ADS" />
           </p>
           <h1 className="animate-rise-delay mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl md:text-6xl">
             Get In Front of Customers Ready to Buy
           </h1>
-          <p className="animate-rise-delay-2 mt-6 max-w-3xl text-base text-white/75 md:text-xl">
+          <p className="animate-rise-delay-2 mx-auto mt-6 max-w-3xl text-base text-white/75 md:text-xl">
             Want results without waiting for organic rankings to develop?
           </p>
           <Link

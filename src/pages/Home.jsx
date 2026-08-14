@@ -113,13 +113,13 @@ const journey = [
 export default function Home() {
   return (
     <main>
-      <section className="relative overflow-hidden bg-ink px-5 pt-36 pb-28 text-white md:flex md:min-h-[78vh] md:items-center md:px-8 md:pt-56 md:pb-52">
+      <section className="relative flex min-h-[70vh] items-center overflow-hidden bg-ink px-5 pt-28 pb-16 text-white md:min-h-[78vh] md:px-8 md:pt-56 md:pb-52">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(0,194,255,0.42),transparent_45%),radial-gradient(circle_at_82%_12%,rgba(0,87,255,0.55),transparent_50%),linear-gradient(160deg,#000000_0%,#000000_55%,#050505_100%)]" />
         <img
           src="/hero-bg.png"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 h-full w-full object-cover object-[78%_center] md:object-center"
         />
         <div className="absolute inset-0 bg-ink/45" />
 
@@ -140,7 +140,15 @@ export default function Home() {
           </p>
           <div className="animate-rise-delay-3 mt-10 flex flex-nowrap items-center justify-center gap-2.5 sm:gap-4">
             <Link
-              to="/quote"
+              to="/#quote"
+              onClick={(e) => {
+                if (window.location.pathname !== '/') return
+                e.preventDefault()
+                document.getElementById('quote')?.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start',
+                })
+              }}
               className="btn-brand shrink-0 rounded-full px-4 py-3 text-xs font-bold text-white sm:px-6 sm:py-3.5 sm:text-sm"
             >
               GET A FREE QUOTE
