@@ -174,7 +174,7 @@ export default function QuoteForm({ variant = 'light' }) {
 
         <button
           type="submit"
-          className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-brand px-7 py-3.5 text-sm font-bold text-white transition hover:brightness-110 sm:mt-7 md:w-auto"
+          className="mt-6 inline-flex w-full items-center justify-center btn-brand rounded-full px-7 py-3.5 text-sm font-bold text-white sm:mt-7 md:w-auto"
         >
           Request a Quote
         </button>

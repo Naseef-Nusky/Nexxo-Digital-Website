@@ -26,7 +26,7 @@ export default function Footer() {
           </p>
           <Link
             to="/quote"
-            className="mt-6 inline-flex rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+            className="btn-brand mt-6 inline-flex rounded-full px-5 py-2.5 text-sm font-semibold text-white"
           >
             Get a Free Quote
           </Link>

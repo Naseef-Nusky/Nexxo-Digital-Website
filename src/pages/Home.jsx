@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import QuoteForm from '../components/QuoteForm'
 import { ColorGoogle, GoogleText } from '../components/GoogleText'
+import { centeredCardClass } from '../utils/grid'
 
 const websiteServices = [
   'Bespoke website design',
@@ -112,7 +113,7 @@ const journey = [
 export default function Home() {
   return (
     <main>
-      <section className="relative min-h-[100svh] overflow-hidden bg-ink text-white">
+      <section className="relative overflow-hidden bg-ink px-5 pt-44 pb-44 text-white md:px-8 md:min-h-[78vh] md:pt-56 md:pb-52 md:flex md:items-center">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(0,194,255,0.42),transparent_45%),radial-gradient(circle_at_82%_12%,rgba(0,87,255,0.55),transparent_50%),linear-gradient(160deg,#000000_0%,#000000_55%,#050505_100%)]" />
         <img
           src="/hero-bg.png"
@@ -122,29 +123,76 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-ink/45" />
 
-        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl flex-col items-center justify-center px-5 pb-16 pt-28 text-center md:px-8 md:pt-24">
+        <div className="relative z-10 mx-auto w-full max-w-6xl text-center">
           <p className="animate-rise font-display text-sm font-semibold tracking-[0.28em] text-cyan uppercase md:text-base">
             NEXXO DIGITAL
           </p>
-          <h1 className="animate-rise-delay mt-4 max-w-4xl font-display text-4xl leading-[1.05] font-extrabold tracking-tight md:text-6xl lg:text-7xl">
+          <h1 className="animate-rise-delay mt-4 max-w-4xl mx-auto font-display text-4xl leading-[1.05] font-extrabold tracking-tight md:text-6xl lg:text-7xl">
             BUILD. RANK. GROW.
           </h1>
-          <p className="animate-rise-delay-2 mt-6 max-w-2xl text-lg text-white/80 md:text-xl">
+          <p className="animate-rise-delay-2 mx-auto mt-6 max-w-2xl text-lg text-white/80 md:text-xl">
             Websites That Look Better. Rank Higher. Convert More.
           </p>
           <div className="animate-rise-delay-2 mt-10 flex flex-wrap justify-center gap-4">
             <Link
               to="/quote"
-              className="rounded-full bg-brand px-6 py-3.5 text-sm font-bold text-white transition hover:brightness-110"
+              className="btn-brand rounded-full px-6 py-3.5 text-sm font-bold text-white"
             >
               GET A FREE QUOTE
             </Link>
             <Link
               to="/quote"
-              className="rounded-full border border-white/30 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/5"
+              className="btn-outline rounded-full border border-white/30 px-6 py-3.5 text-sm font-semibold text-white hover:border-white hover:bg-white/5"
             >
               SPEAK TO OUR TEAM
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-mist py-16 md:py-20">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
+        <div className="relative mx-auto max-w-6xl px-5 md:px-8">
+          <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-brand" />
+          <p className="text-center font-display text-sm font-semibold tracking-[0.22em] text-blue uppercase md:text-base">
+            Our website design services include
+          </p>
+        </div>
+
+        <div className="marquee-pause relative mt-10 w-full overflow-hidden">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-mist to-transparent sm:w-28" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-mist to-transparent sm:w-28" />
+
+          <div className="marquee-track-left flex w-max gap-3">
+            {[
+              ...websiteServices,
+              ...websiteServices,
+              ...websiteServices,
+              ...websiteServices,
+            ].map((item, index) => (
+                <div
+                  key={`service-${item}-${index}`}
+                  className="flex shrink-0 items-center gap-2.5 whitespace-nowrap rounded-full border border-ink/10 bg-white/80 px-4 py-2.5"
+                >
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan/15 text-blue">
+                    <svg
+                      viewBox="0 0 16 16"
+                      className="h-3.5 w-3.5"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M3.5 8.5 6.5 11.5 12.5 4.5"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span className="text-sm font-medium text-ink/85">{item}</span>
+                </div>
+              ))}
           </div>
         </div>
       </section>
@@ -215,56 +263,12 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          <div className="mt-16">
-            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-brand" />
-            <p className="text-center font-display text-sm font-semibold tracking-[0.22em] text-blue uppercase md:text-base">
-              Our website design services include
-            </p>
-          </div>
-        </div>
-
-        <div className="marquee-pause relative mt-10 w-full overflow-hidden">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-mist to-transparent sm:w-28" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-mist to-transparent sm:w-28" />
-
-          <div className="marquee-track-left flex w-max gap-3">
-            {[
-              ...websiteServices,
-              ...websiteServices,
-              ...websiteServices,
-              ...websiteServices,
-            ].map((item, index) => (
-                <div
-                  key={`service-${item}-${index}`}
-                  className="flex shrink-0 items-center gap-2.5 whitespace-nowrap rounded-full border border-ink/10 bg-white/80 px-4 py-2.5"
-                >
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan/15 text-blue">
-                    <svg
-                      viewBox="0 0 16 16"
-                      className="h-3.5 w-3.5"
-                      fill="none"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M3.5 8.5 6.5 11.5 12.5 4.5"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <span className="text-sm font-medium text-ink/85">{item}</span>
-                </div>
-              ))}
-          </div>
         </div>
       </section>
 
       <section className="relative overflow-hidden bg-navy px-5 py-16 text-white md:px-8 md:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,194,255,0.22),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(0,87,255,0.28),transparent_50%)]" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
           <h3 className="font-display text-2xl font-bold tracking-tight md:text-4xl">
             A Better Website Should Mean Better Business.
@@ -276,7 +280,7 @@ export default function Home() {
           </p>
           <Link
             to="/web-design"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-brand px-7 py-3.5 text-sm font-bold text-white transition hover:brightness-110"
+            className="mt-8 inline-flex items-center justify-center btn-brand rounded-full px-7 py-3.5 text-sm font-bold text-white"
           >
             EXPLORE WEB DESIGN →
           </Link>
@@ -313,11 +317,11 @@ export default function Home() {
             <p className="text-center font-display text-sm font-semibold tracking-[0.22em] text-blue uppercase md:text-base">
               Our SEO strategies can include
             </p>
-            <div className="mx-auto mt-10 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {seoStrategies.map((item) => (
+            <div className="mx-auto mt-10 grid max-w-5xl gap-5 sm:grid-cols-4 lg:grid-cols-6">
+              {seoStrategies.map((item, index) => (
                 <div
                   key={item.title}
-                  className="group overflow-hidden rounded-2xl border border-ink/8 bg-white transition duration-300 hover:-translate-y-1 hover:border-cyan/35 hover:shadow-[0_22px_48px_-28px_rgba(0,87,255,0.45)]"
+                  className={`group overflow-hidden rounded-2xl border border-ink/8 bg-white transition duration-300 hover:-translate-y-1 hover:border-cyan/35 hover:shadow-[0_22px_48px_-28px_rgba(0,87,255,0.45)] ${centeredCardClass(index, seoStrategies.length)}`}
                 >
                   <div className="relative aspect-[4/3] overflow-hidden bg-navy">
                     <img
@@ -344,14 +348,14 @@ export default function Home() {
 
       <section className="relative overflow-hidden bg-navy px-5 py-16 text-white md:px-8 md:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(0,194,255,0.2),transparent_45%),radial-gradient(circle_at_20%_80%,rgba(0,87,255,0.25),transparent_50%)]" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
           <h3 className="font-display text-2xl font-bold tracking-tight md:text-4xl">
             Don’t Just Have a Website. Make Sure People Find It.
           </h3>
           <Link
             to="/seo"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-brand px-7 py-3.5 text-sm font-bold text-white transition hover:brightness-110"
+            className="mt-8 inline-flex items-center justify-center btn-brand rounded-full px-7 py-3.5 text-sm font-bold text-white"
           >
             EXPLORE SEO →
           </Link>
@@ -392,9 +396,12 @@ export default function Home() {
             <p className="text-center font-display text-sm font-semibold tracking-[0.22em] text-blue uppercase md:text-base">
               Our PPC management includes
             </p>
-            <ul className="mx-auto mt-10 grid max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-8 sm:gap-y-3">
-              {ppcIncludes.map((item) => (
-                <li key={item} className="flex items-center gap-3 px-1 py-2">
+            <ul className="mx-auto mt-10 grid max-w-5xl gap-3 sm:grid-cols-4 sm:gap-x-8 sm:gap-y-3 lg:grid-cols-6">
+              {ppcIncludes.map((item, index) => (
+                <li
+                  key={item}
+                  className={`flex items-center gap-3 px-1 py-2 ${centeredCardClass(index, ppcIncludes.length)}`}
+                >
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan/15 text-blue">
                     <svg
                       viewBox="0 0 16 16"
@@ -423,14 +430,14 @@ export default function Home() {
 
       <section className="relative overflow-hidden bg-navy px-5 py-16 text-white md:px-8 md:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(0,194,255,0.22),transparent_45%),radial-gradient(circle_at_80%_75%,rgba(0,87,255,0.28),transparent_50%)]" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
           <h3 className="font-display text-2xl font-bold tracking-tight md:text-4xl">
             More Than Clicks. We Focus on Customers.
           </h3>
           <Link
             to="/ppc"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-brand px-7 py-3.5 text-sm font-bold text-white transition hover:brightness-110"
+            className="mt-8 inline-flex items-center justify-center btn-brand rounded-full px-7 py-3.5 text-sm font-bold text-white"
           >
             EXPLORE PPC →
           </Link>
@@ -530,13 +537,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mx-auto mt-14 grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-6 lg:gap-5">
+          <div className="mx-auto mt-14 grid max-w-5xl gap-4 sm:grid-cols-4 lg:grid-cols-6 lg:gap-5">
             {whyPoints.map((item, index) => (
               <div
                 key={item.title}
-                className={`rounded-2xl border border-ink/8 bg-white p-5 md:p-6 lg:col-span-2 ${
-                  index === 3 ? 'lg:col-start-2' : ''
-                } ${index === 4 ? 'lg:col-start-4' : ''}`}
+                className={`rounded-2xl border border-ink/8 bg-white p-5 md:p-6 ${centeredCardClass(index, whyPoints.length)}`}
               >
                 <div className="mb-4 h-1 w-10 rounded-full bg-brand" />
                 <h3 className="font-display text-xl font-semibold text-ink">
@@ -604,7 +609,7 @@ export default function Home() {
 
       <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/30 to-transparent" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
             className="text-center"

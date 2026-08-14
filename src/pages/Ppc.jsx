@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import { ColorGoogle, GoogleText } from '../components/GoogleText'
+import { centeredCardClass } from '../utils/grid'
 
 const ppcIncludes = [
   'Google Search Ads',
@@ -28,7 +29,7 @@ export default function Ppc() {
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-ink/50" />
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-auto w-full max-w-4xl">
           <p className="animate-rise font-display text-sm font-semibold tracking-[0.24em] text-cyan uppercase">
             <ColorGoogle text="PPC & GOOGLE ADS" />
           </p>
@@ -40,7 +41,7 @@ export default function Ppc() {
           </p>
           <Link
             to="/quote"
-            className="mt-10 inline-flex rounded-full bg-brand px-6 py-3.5 text-sm font-bold text-white transition hover:brightness-110"
+            className="mt-10 inline-flex btn-brand rounded-full px-6 py-3.5 text-sm font-bold text-white"
           >
             GET A FREE QUOTE
           </Link>
@@ -49,7 +50,7 @@ export default function Ppc() {
 
       <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
           <div className="space-y-6 text-lg leading-relaxed text-slate md:text-xl">
             <p>
@@ -70,7 +71,7 @@ export default function Ppc() {
 
       <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-auto w-full max-w-4xl">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
             <SectionHeading
@@ -113,11 +114,11 @@ export default function Ppc() {
               title="Our PPC management includes:"
             />
           </div>
-          <ul className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {ppcIncludes.map((item) => (
+          <ul className="mt-12 grid gap-3 sm:grid-cols-4 lg:grid-cols-6">
+            {ppcIncludes.map((item, index) => (
               <li
                 key={item}
-                className="flex items-start gap-3 rounded-xl border border-ink/8 bg-white px-4 py-3.5 text-sm text-slate transition duration-300 hover:border-cyan/35 md:text-base"
+                className={`flex items-start gap-3 rounded-xl border border-ink/8 bg-white px-4 py-3.5 text-sm text-slate transition duration-300 hover:border-cyan/35 md:text-base ${centeredCardClass(index, ppcIncludes.length)}`}
               >
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
                 <ColorGoogle text={item} />
@@ -129,7 +130,7 @@ export default function Ppc() {
 
       <section className="relative overflow-hidden bg-navy px-5 py-20 text-white md:px-8 md:py-28">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,194,255,0.2),transparent_42%),radial-gradient(circle_at_80%_80%,rgba(0,87,255,0.26),transparent_48%)]" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
           <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
             More Than Clicks. We Focus on Customers.
@@ -148,7 +149,7 @@ export default function Ppc() {
           </p>
           <Link
             to="/quote"
-            className="mt-10 inline-flex rounded-full bg-brand px-6 py-3.5 text-sm font-bold text-white transition hover:brightness-110"
+            className="mt-10 inline-flex btn-brand rounded-full px-6 py-3.5 text-sm font-bold text-white"
           >
             GET YOUR FREE CONSULTATION
           </Link>

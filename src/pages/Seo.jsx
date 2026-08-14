@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import { ColorGoogle, GoogleText } from '../components/GoogleText'
+import { centeredCardClass } from '../utils/grid'
 
 const seoStrategies = [
   {
@@ -47,7 +48,7 @@ export default function Seo() {
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-ink/50" />
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-auto w-full max-w-4xl">
           <p className="animate-rise font-display text-sm font-semibold tracking-[0.24em] text-cyan uppercase">
             SEO
           </p>
@@ -59,7 +60,7 @@ export default function Seo() {
           </p>
           <Link
             to="/quote"
-            className="mt-10 inline-flex rounded-full bg-brand px-6 py-3.5 text-sm font-bold text-white transition hover:brightness-110"
+            className="mt-10 inline-flex btn-brand rounded-full px-6 py-3.5 text-sm font-bold text-white"
           >
             GET A FREE QUOTE
           </Link>
@@ -68,7 +69,7 @@ export default function Seo() {
 
       <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
           <div className="space-y-6 text-lg leading-relaxed text-slate md:text-xl">
             <p>
@@ -84,7 +85,7 @@ export default function Seo() {
 
       <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-auto w-full max-w-4xl">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
             <SectionHeading
@@ -126,11 +127,11 @@ export default function Seo() {
               title="Our SEO strategies can include:"
             />
           </div>
-          <div className="mx-auto mt-12 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {seoStrategies.map((item) => (
+          <div className="mx-auto mt-12 grid max-w-5xl gap-5 sm:grid-cols-4 lg:grid-cols-6">
+            {seoStrategies.map((item, index) => (
               <div
                 key={item.title}
-                className="group overflow-hidden rounded-2xl border border-ink/8 bg-white transition duration-300 hover:-translate-y-1 hover:border-cyan/35 hover:shadow-[0_22px_48px_-28px_rgba(0,87,255,0.45)]"
+                className={`group overflow-hidden rounded-2xl border border-ink/8 bg-white transition duration-300 hover:-translate-y-1 hover:border-cyan/35 hover:shadow-[0_22px_48px_-28px_rgba(0,87,255,0.45)] ${centeredCardClass(index, seoStrategies.length)}`}
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-navy">
                   <img
@@ -156,7 +157,7 @@ export default function Seo() {
 
       <section className="relative overflow-hidden bg-navy px-5 py-20 text-white md:px-8 md:py-28">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,194,255,0.2),transparent_42%),radial-gradient(circle_at_80%_80%,rgba(0,87,255,0.26),transparent_48%)]" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
           <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
             Don’t Just Have a Website. Make Sure People Find It.
@@ -175,7 +176,7 @@ export default function Seo() {
           </p>
           <Link
             to="/quote"
-            className="mt-10 inline-flex rounded-full bg-brand px-6 py-3.5 text-sm font-bold text-white transition hover:brightness-110"
+            className="mt-10 inline-flex btn-brand rounded-full px-6 py-3.5 text-sm font-bold text-white"
           >
             GET YOUR FREE CONSULTATION
           </Link>

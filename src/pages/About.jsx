@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import { ColorGoogle, GoogleText } from '../components/GoogleText'
+import { centeredCardClass } from '../utils/grid'
 
 const approach = [
   {
@@ -60,7 +61,7 @@ export default function About() {
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-ink/50" />
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-auto w-full max-w-4xl">
           <p className="animate-rise font-display text-sm font-semibold tracking-[0.24em] text-cyan uppercase">
             About Nexxo Digital
           </p>
@@ -77,7 +78,7 @@ export default function About() {
 
       <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
           <div className="space-y-6 text-lg leading-relaxed text-slate md:text-xl">
             <p>
@@ -372,11 +373,11 @@ export default function About() {
             <SectionHeading className="text-center" title="Why Choose Nexxo Digital?" />
           </div>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {whyChoose.map((item) => (
+          <div className="mt-12 grid gap-5 sm:grid-cols-4 lg:grid-cols-6">
+            {whyChoose.map((item, index) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-ink/8 bg-mist/60 p-5 transition duration-300 hover:border-cyan/35 hover:bg-white hover:shadow-[0_18px_40px_-28px_rgba(0,87,255,0.4)] md:p-6"
+                className={`rounded-2xl border border-ink/8 bg-mist/60 p-5 transition duration-300 hover:border-cyan/35 hover:bg-white hover:shadow-[0_18px_40px_-28px_rgba(0,87,255,0.4)] md:p-6 ${centeredCardClass(index, whyChoose.length)}`}
               >
                 <div className="mb-4 h-1 w-10 rounded-full bg-brand" />
                 <h3 className="font-display text-lg font-semibold text-ink md:text-xl">
@@ -393,7 +394,7 @@ export default function About() {
 
       <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-auto w-full max-w-4xl">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
             <SectionHeading
@@ -440,7 +441,7 @@ export default function About() {
 
       <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-auto w-full max-w-4xl">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
             <SectionHeading
@@ -534,13 +535,13 @@ export default function About() {
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
               to="/quote"
-              className="rounded-full bg-brand px-6 py-3.5 text-sm font-bold text-white transition hover:brightness-110"
+              className="btn-brand rounded-full px-6 py-3.5 text-sm font-bold text-white"
             >
               GET YOUR FREE CONSULTATION
             </Link>
             <Link
               to="/quote"
-              className="rounded-full border border-ink/20 px-6 py-3.5 text-sm font-semibold text-ink transition hover:border-ink hover:bg-ink/5"
+              className="btn-outline rounded-full border border-ink/20 px-6 py-3.5 text-sm font-semibold text-ink hover:border-ink hover:bg-ink/5"
             >
               SPEAK TO NEXXO DIGITAL
             </Link>

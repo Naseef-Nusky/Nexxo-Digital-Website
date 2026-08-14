@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import { ColorGoogle, GoogleText } from '../components/GoogleText'
+import { centeredCardClass } from '../utils/grid'
 
 const conversionFeatures = [
   'Prominent enquiry forms',
@@ -199,11 +200,11 @@ const whyChoose = [
 
 function FeatureList({ items }) {
   return (
-    <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-      {items.map((item) => (
+    <ul className="mt-8 grid gap-3 sm:grid-cols-4 lg:grid-cols-6">
+      {items.map((item, index) => (
         <li
           key={item}
-          className="flex items-start gap-3 rounded-xl border border-ink/8 bg-white px-4 py-3.5 text-sm text-slate md:text-base"
+          className={`flex items-start gap-3 rounded-xl border border-ink/8 bg-white px-4 py-3.5 text-sm text-slate md:text-base ${centeredCardClass(index, items.length)}`}
         >
           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
           {item}
@@ -225,7 +226,7 @@ export default function WebDesign() {
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-ink/50" />
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-auto w-full max-w-4xl">
           <p className="animate-rise font-display text-sm font-semibold tracking-[0.24em] text-cyan uppercase">
             Web Design & Development
           </p>
@@ -238,7 +239,7 @@ export default function WebDesign() {
           </p>
           <Link
             to="/quote"
-            className="mt-10 inline-flex rounded-full bg-brand px-6 py-3.5 text-sm font-bold text-white transition hover:brightness-110"
+            className="mt-10 inline-flex btn-brand rounded-full px-6 py-3.5 text-sm font-bold text-white"
           >
             GET A FREE WEBSITE QUOTE
           </Link>
@@ -247,7 +248,7 @@ export default function WebDesign() {
 
       <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
           <div className="space-y-6 text-lg leading-relaxed text-slate md:text-xl">
             <p>
@@ -288,7 +289,7 @@ export default function WebDesign() {
 
       <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
             className="text-center"
@@ -396,11 +397,11 @@ export default function WebDesign() {
               </p>
             </div>
           </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {journeySteps.map((step) => (
+          <div className="mt-12 grid gap-5 sm:grid-cols-4 lg:grid-cols-6">
+            {journeySteps.map((step, index) => (
               <div
                 key={step.num}
-                className="rounded-2xl border border-ink/8 bg-white p-5 md:p-6"
+                className={`rounded-2xl border border-ink/8 bg-white p-5 md:p-6 ${centeredCardClass(index, journeySteps.length)}`}
               >
                 <p className="font-display text-sm font-bold tracking-[0.2em] text-cyan">
                   {step.num}
@@ -422,7 +423,7 @@ export default function WebDesign() {
 
       <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
             className="text-center"
@@ -485,11 +486,11 @@ export default function WebDesign() {
               </p>
             </div>
           </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {conversionFocus.map((item) => (
+          <div className="mt-12 grid gap-5 sm:grid-cols-4 lg:grid-cols-6">
+            {conversionFocus.map((item, index) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-ink/8 bg-white p-5 transition duration-300 hover:border-cyan/35 md:p-6"
+                className={`rounded-2xl border border-ink/8 bg-white p-5 transition duration-300 hover:border-cyan/35 md:p-6 ${centeredCardClass(index, conversionFocus.length)}`}
               >
                 <div className="mb-4 h-1 w-10 rounded-full bg-brand" />
                 <h3 className="font-display text-lg font-semibold text-ink">
@@ -553,7 +554,7 @@ export default function WebDesign() {
 
       <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
             className="text-center"
@@ -595,7 +596,7 @@ export default function WebDesign() {
 
       <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
             className="text-center"
@@ -699,7 +700,7 @@ export default function WebDesign() {
 
       <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
             className="text-center"
@@ -743,7 +744,7 @@ export default function WebDesign() {
 
       <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
             className="text-center"
@@ -771,7 +772,7 @@ export default function WebDesign() {
 
       <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-auto w-full max-w-4xl">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
             <SectionHeading
@@ -853,11 +854,11 @@ export default function WebDesign() {
               title="Our Lead Generation Web Design Process"
             />
           </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2">
-            {processSteps.map((step) => (
+          <div className="mt-12 grid gap-5 sm:grid-cols-4 lg:grid-cols-6">
+            {processSteps.map((step, index) => (
               <div
                 key={step.num}
-                className="rounded-2xl border border-ink/8 bg-mist/60 p-5 md:p-6"
+                className={`rounded-2xl border border-ink/8 bg-mist/60 p-5 md:p-6 ${centeredCardClass(index, processSteps.length)}`}
               >
                 <p className="font-display text-sm font-bold tracking-[0.2em] text-cyan">
                   {step.num}
@@ -895,11 +896,11 @@ export default function WebDesign() {
               <p>That difference influences everything we build.</p>
             </div>
           </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {whyChoose.map((item) => (
+          <div className="mt-12 grid gap-5 sm:grid-cols-4 lg:grid-cols-6">
+            {whyChoose.map((item, index) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-ink/8 bg-white p-5 transition duration-300 hover:border-cyan/35 md:p-6"
+                className={`rounded-2xl border border-ink/8 bg-white p-5 transition duration-300 hover:border-cyan/35 md:p-6 ${centeredCardClass(index, whyChoose.length)}`}
               >
                 <div className="mb-4 h-1 w-10 rounded-full bg-brand" />
                 <h3 className="font-display text-lg font-semibold text-ink">
@@ -916,7 +917,7 @@ export default function WebDesign() {
 
       <section className="relative overflow-hidden bg-navy px-5 py-20 text-white md:px-8 md:py-28">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,194,255,0.2),transparent_42%),radial-gradient(circle_at_80%_80%,rgba(0,87,255,0.26),transparent_48%)]" />
-        <div className="relative mx-auto max-w-3xl text-center">
+        <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
             className="text-center"
@@ -953,13 +954,13 @@ export default function WebDesign() {
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
               to="/quote"
-              className="rounded-full bg-brand px-6 py-3.5 text-sm font-bold text-white transition hover:brightness-110"
+              className="btn-brand rounded-full px-6 py-3.5 text-sm font-bold text-white"
             >
               GET YOUR FREE WEBSITE QUOTE
             </Link>
             <Link
               to="/quote"
-              className="rounded-full border border-white/25 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/5"
+              className="btn-outline rounded-full border border-white/25 px-6 py-3.5 text-sm font-semibold text-white hover:border-white hover:bg-white/5"
             >
               SPEAK TO NEXXO DIGITAL
             </Link>

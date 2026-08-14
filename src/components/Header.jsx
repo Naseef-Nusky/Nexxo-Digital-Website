@@ -34,7 +34,7 @@ export default function Header() {
           ))}
           <Link
             to="/quote"
-            className="rounded-full bg-brand px-5 py-2.5 font-semibold text-white transition hover:brightness-110"
+            className="btn-brand rounded-full px-5 py-2.5 font-semibold text-white"
           >
             Get a Free Quote
           </Link>
@@ -86,7 +86,7 @@ export default function Header() {
             <Link
               to="/quote"
               onClick={() => setOpen(false)}
-              className="mt-1 inline-flex w-fit rounded-full bg-brand px-5 py-2.5 font-semibold text-white"
+              className="btn-brand mt-1 inline-flex w-fit rounded-full px-5 py-2.5 font-semibold text-white"
             >
               Get a Free Quote
             </Link>
