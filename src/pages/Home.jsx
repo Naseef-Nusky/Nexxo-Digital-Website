@@ -155,18 +155,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-mist py-8 md:py-20">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
+      <section className="relative overflow-hidden bg-white py-8 md:py-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(0,194,255,0.08),transparent_42%),radial-gradient(circle_at_85%_80%,rgba(0,87,255,0.06),transparent_48%)]" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/30 to-transparent" />
+
         <div className="relative mx-auto max-w-6xl px-5 md:px-8">
           <div className="mx-auto mb-3 h-1 w-12 rounded-full bg-brand md:mb-4" />
-          <p className="text-center font-display text-sm font-semibold tracking-[0.14em] md:tracking-[0.22em] text-blue uppercase md:text-base">
+          <p className="text-center font-display text-sm font-semibold tracking-[0.14em] text-blue uppercase md:text-base md:tracking-[0.22em]">
             Our website design services include
           </p>
         </div>
 
         <div className="marquee-pause relative mt-6 w-full overflow-hidden md:mt-10">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-mist to-transparent sm:w-28" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-mist to-transparent sm:w-28" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent sm:w-28" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent sm:w-28" />
 
           <div className="marquee-track-left flex w-max gap-3">
             {[
@@ -177,7 +179,7 @@ export default function Home() {
             ].map((item, index) => (
                 <div
                   key={`service-${item}-${index}`}
-                  className="flex shrink-0 items-center gap-2.5 whitespace-nowrap rounded-full border border-ink/10 bg-white/80 px-4 py-2.5"
+                  className="flex shrink-0 items-center gap-2.5 whitespace-nowrap rounded-full border border-ink/10 bg-mist/80 px-4 py-2.5"
                 >
                   <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan/15 text-blue">
                     <svg
