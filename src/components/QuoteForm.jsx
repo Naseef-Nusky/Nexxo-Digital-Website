@@ -50,7 +50,7 @@ export default function QuoteForm({ variant = 'light' }) {
           </svg>
         </div>
         <h3
-          className={`mt-5 font-display text-2xl font-bold md:text-3xl ${
+          className={`mt-5 font-display text-xl font-bold md:text-3xl ${
             dark ? 'text-white' : 'text-ink'
           }`}
         >

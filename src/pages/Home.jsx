@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import QuoteForm from '../components/QuoteForm'
 import { ColorGoogle, GoogleText } from '../components/GoogleText'
-import { centeredCardClass } from '../utils/grid'
+import { centeredCardClass, centeredCardClassFromMobile } from '../utils/grid'
 
 const websiteServices = [
   'Bespoke website design',
@@ -113,7 +113,7 @@ const journey = [
 export default function Home() {
   return (
     <main>
-      <section className="relative overflow-hidden bg-ink px-5 pt-44 pb-44 text-white md:px-8 md:min-h-[78vh] md:pt-56 md:pb-52 md:flex md:items-center">
+      <section className="relative overflow-hidden bg-ink px-5 pt-36 pb-28 text-white md:flex md:min-h-[78vh] md:items-center md:px-8 md:pt-56 md:pb-52">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(0,194,255,0.42),transparent_45%),radial-gradient(circle_at_82%_12%,rgba(0,87,255,0.55),transparent_50%),linear-gradient(160deg,#000000_0%,#000000_55%,#050505_100%)]" />
         <img
           src="/hero-bg.png"
@@ -124,25 +124,30 @@ export default function Home() {
         <div className="absolute inset-0 bg-ink/45" />
 
         <div className="relative z-10 mx-auto w-full max-w-6xl text-center">
-          <p className="animate-rise font-display text-sm font-semibold tracking-[0.28em] text-cyan uppercase md:text-base">
+          <p className="animate-rise font-display text-sm font-semibold tracking-[0.16em] md:tracking-[0.28em] text-cyan uppercase md:text-base">
             NEXXO DIGITAL
           </p>
-          <h1 className="animate-rise-delay mt-4 max-w-4xl mx-auto font-display text-4xl leading-[1.05] font-extrabold tracking-tight md:text-6xl lg:text-7xl">
-            BUILD. RANK. GROW.
+          <h1 className="mx-auto mt-4 max-w-4xl font-display text-[clamp(1.55rem,7.2vw,2.25rem)] leading-[1.05] font-extrabold tracking-tight whitespace-nowrap md:text-6xl lg:text-7xl">
+            <span className="hero-word hero-word-1 text-brand">BUILD</span>
+            <span className="hero-word hero-word-1 text-white/40">.</span>{' '}
+            <span className="hero-word hero-word-2 text-brand">RANK</span>
+            <span className="hero-word hero-word-2 text-white/40">.</span>{' '}
+            <span className="hero-word hero-word-3 text-brand">GROW</span>
+            <span className="hero-word hero-word-3 text-white/40">.</span>
           </h1>
-          <p className="animate-rise-delay-2 mx-auto mt-6 max-w-2xl text-lg text-white/80 md:text-xl">
+          <p className="hero-subline mx-auto mt-6 max-w-2xl text-base text-white/80 md:text-xl">
             Websites That Look Better. Rank Higher. Convert More.
           </p>
-          <div className="animate-rise-delay-2 mt-10 flex flex-wrap justify-center gap-4">
+          <div className="animate-rise-delay-3 mt-10 flex flex-nowrap items-center justify-center gap-2.5 sm:gap-4">
             <Link
               to="/quote"
-              className="btn-brand rounded-full px-6 py-3.5 text-sm font-bold text-white"
+              className="btn-brand shrink-0 rounded-full px-4 py-3 text-xs font-bold text-white sm:px-6 sm:py-3.5 sm:text-sm"
             >
               GET A FREE QUOTE
             </Link>
             <Link
               to="/quote"
-              className="btn-outline rounded-full border border-white/30 px-6 py-3.5 text-sm font-semibold text-white hover:border-white hover:bg-white/5"
+              className="btn-outline shrink-0 rounded-full border border-white/30 px-4 py-3 text-xs font-semibold text-white hover:border-white hover:bg-white/5 sm:px-6 sm:py-3.5 sm:text-sm"
             >
               SPEAK TO OUR TEAM
             </Link>
@@ -150,16 +155,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-mist py-16 md:py-20">
+      <section className="relative overflow-hidden bg-mist py-8 md:py-20">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
         <div className="relative mx-auto max-w-6xl px-5 md:px-8">
-          <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-brand" />
-          <p className="text-center font-display text-sm font-semibold tracking-[0.22em] text-blue uppercase md:text-base">
+          <div className="mx-auto mb-3 h-1 w-12 rounded-full bg-brand md:mb-4" />
+          <p className="text-center font-display text-sm font-semibold tracking-[0.14em] md:tracking-[0.22em] text-blue uppercase md:text-base">
             Our website design services include
           </p>
         </div>
 
-        <div className="marquee-pause relative mt-10 w-full overflow-hidden">
+        <div className="marquee-pause relative mt-6 w-full overflow-hidden md:mt-10">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-mist to-transparent sm:w-28" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-mist to-transparent sm:w-28" />
 
@@ -198,7 +203,7 @@ export default function Home() {
       </section>
 
       <section className="px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-3xl space-y-6 text-center text-lg leading-relaxed text-slate md:text-xl">
+        <div className="mx-auto max-w-3xl space-y-5 text-center text-base leading-relaxed text-slate md:space-y-6 md:text-xl">
           <p>
             Nexxo Digital is a results-driven web design and digital marketing
             agency helping businesses build a stronger online presence and
@@ -226,7 +231,7 @@ export default function Home() {
             eyebrow="DIGITAL SERVICES BUILT AROUND GROWTH"
             title="Having a website isn’t enough."
           />
-          <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate">
+          <div className="mt-8 space-y-6 text-base leading-relaxed text-slate md:text-lg">
             <p>
               <ColorGoogle text="Your business needs a website that represents your brand professionally, appears when potential customers search Google and turns those visitors into genuine enquiries." />
             </p>
@@ -247,7 +252,7 @@ export default function Home() {
               eyebrow="WEBSITE DESIGN"
               title="Websites Designed to Convert"
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-lg">
               <p>
                 Your website is often the first interaction somebody has with
                 your business.
@@ -267,13 +272,20 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden bg-navy px-5 py-16 text-white md:px-8 md:py-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,194,255,0.22),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(0,87,255,0.28),transparent_50%)]" />
+        <img
+          src="/Web-Design-CTA.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-navy/70" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,194,255,0.16),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(0,87,255,0.18),transparent_50%)]" />
         <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
-          <h3 className="font-display text-2xl font-bold tracking-tight md:text-4xl">
+          <h3 className="font-display text-xl font-bold tracking-tight md:text-4xl">
             A Better Website Should Mean Better Business.
           </h3>
-          <p className="mt-5 text-lg leading-relaxed text-white/75">
+          <p className="mt-5 text-base leading-relaxed text-white/75 md:text-lg">
             We focus on creating websites that make it easy for potential
             customers to understand who you are, what you offer and why they
             should choose you.
@@ -300,7 +312,7 @@ export default function Home() {
                 </>
               }
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-lg">
               <p>A great website has limited value if nobody can find it.</p>
               <p>
                 <ColorGoogle text="Our SEO services are designed to improve your visibility across Google and help your business appear for searches that can generate genuine customers." />
@@ -314,7 +326,7 @@ export default function Home() {
 
           <div className="mt-16">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-brand" />
-            <p className="text-center font-display text-sm font-semibold tracking-[0.22em] text-blue uppercase md:text-base">
+            <p className="text-center font-display text-sm font-semibold tracking-[0.14em] md:tracking-[0.22em] text-blue uppercase md:text-base">
               Our SEO strategies can include
             </p>
             <div className="mx-auto mt-10 grid max-w-5xl gap-5 sm:grid-cols-4 lg:grid-cols-6">
@@ -347,10 +359,17 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden bg-navy px-5 py-16 text-white md:px-8 md:py-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(0,194,255,0.2),transparent_45%),radial-gradient(circle_at_20%_80%,rgba(0,87,255,0.25),transparent_50%)]" />
+        <img
+          src="/SEO-CTA.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-navy/70" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(0,194,255,0.14),transparent_45%),radial-gradient(circle_at_20%_80%,rgba(0,87,255,0.16),transparent_50%)]" />
         <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
-          <h3 className="font-display text-2xl font-bold tracking-tight md:text-4xl">
+          <h3 className="font-display text-xl font-bold tracking-tight md:text-4xl">
             Don’t Just Have a Website. Make Sure People Find It.
           </h3>
           <Link
@@ -371,7 +390,7 @@ export default function Home() {
               eyebrow={<ColorGoogle text="PPC & GOOGLE ADS" />}
               title="Get In Front of Customers Ready to Buy"
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-lg">
               <p>
                 Want results without waiting for organic rankings to develop?
               </p>
@@ -393,14 +412,14 @@ export default function Home() {
 
           <div className="mt-16">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-brand" />
-            <p className="text-center font-display text-sm font-semibold tracking-[0.22em] text-blue uppercase md:text-base">
+            <p className="text-center font-display text-sm font-semibold tracking-[0.14em] md:tracking-[0.22em] text-blue uppercase md:text-base">
               Our PPC management includes
             </p>
-            <ul className="mx-auto mt-10 grid max-w-5xl gap-3 sm:grid-cols-4 sm:gap-x-8 sm:gap-y-3 lg:grid-cols-6">
+            <ul className="mx-auto mt-10 grid max-w-5xl grid-cols-2 gap-3 sm:gap-x-8 sm:gap-y-3 lg:grid-cols-6">
               {ppcIncludes.map((item, index) => (
                 <li
                   key={item}
-                  className={`flex items-center gap-3 px-1 py-2 ${centeredCardClass(index, ppcIncludes.length)}`}
+                  className={`flex items-center gap-3 px-1 py-2 ${centeredCardClassFromMobile(index, ppcIncludes.length)}`}
                 >
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan/15 text-blue">
                     <svg
@@ -429,10 +448,17 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden bg-navy px-5 py-16 text-white md:px-8 md:py-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(0,194,255,0.22),transparent_45%),radial-gradient(circle_at_80%_75%,rgba(0,87,255,0.28),transparent_50%)]" />
+        <img
+          src="/PPC-CTA.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-navy/70" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(0,194,255,0.14),transparent_45%),radial-gradient(circle_at_80%_75%,rgba(0,87,255,0.16),transparent_50%)]" />
         <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
-          <h3 className="font-display text-2xl font-bold tracking-tight md:text-4xl">
+          <h3 className="font-display text-xl font-bold tracking-tight md:text-4xl">
             More Than Clicks. We Focus on Customers.
           </h3>
           <Link
@@ -453,7 +479,7 @@ export default function Home() {
               eyebrow="ONE AGENCY. ONE DIGITAL STRATEGY."
               title="Web Design + SEO + PPC"
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-lg">
               <p>
                 The strongest digital strategies don’t treat your website, SEO
                 and paid advertising as completely separate services.
@@ -507,7 +533,7 @@ export default function Home() {
             ))}
           </div>
 
-          <p className="mx-auto mt-12 max-w-3xl text-center text-lg leading-relaxed text-slate md:text-xl">
+          <p className="mx-auto mt-12 max-w-3xl text-center text-base leading-relaxed text-slate md:text-xl">
             Nexxo Digital combines all three to create a complete customer
             acquisition strategy.
           </p>
@@ -523,7 +549,7 @@ export default function Home() {
               eyebrow="WHY NEXXO DIGITAL?"
               title="Digital Marketing Without the Unnecessary Complexity"
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-lg">
               <p>Digital marketing can become unnecessarily complicated.</p>
               <p className="font-display text-xl font-bold tracking-tight text-ink md:text-2xl">
                 We prefer to keep things{' '}
@@ -566,7 +592,7 @@ export default function Home() {
               eyebrow="FROM SEARCH TO SALE"
               title="We Build the Entire Journey"
             />
-            <p className="mt-6 text-lg text-white/75 md:text-xl">
+            <p className="mt-6 text-base text-white/75 md:text-xl">
               Someone searches <GoogleText />.
             </p>
           </div>
@@ -592,10 +618,10 @@ export default function Home() {
 
           <div className="mx-auto mt-14 max-w-2xl text-center">
             <div className="mx-auto mb-5 h-1 w-14 rounded-full bg-brand" />
-            <p className="text-lg text-white/80 md:text-xl">
+            <p className="text-base text-white/80 md:text-xl">
               That’s the Nexxo approach.
             </p>
-            <p className="mt-4 font-display text-2xl font-bold tracking-[0.08em] md:text-3xl">
+            <p className="mt-4 font-display text-2xl font-bold tracking-[0.08em] whitespace-nowrap md:text-3xl">
               <span className="text-brand">BUILD</span>
               <span className="text-white/40">.</span>{' '}
               <span className="text-brand">RANK</span>
@@ -615,7 +641,7 @@ export default function Home() {
             className="text-center"
             title="BUILT FOR AMBITIOUS BUSINESSES"
           />
-          <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate">
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-lg">
             <p>
               We work with businesses that want more from their digital
               presence.
@@ -639,7 +665,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(0,194,255,0.18),transparent_42%),radial-gradient(circle_at_85%_75%,rgba(0,87,255,0.22),transparent_48%)]" />
         <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
           <div className="text-center lg:text-left">
-            <p className="font-display text-sm font-semibold tracking-[0.22em] text-cyan uppercase">
+            <p className="font-display text-sm font-semibold tracking-[0.14em] md:tracking-[0.22em] text-cyan uppercase">
               READY TO GROW YOUR BUSINESS?
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold tracking-tight md:text-5xl">

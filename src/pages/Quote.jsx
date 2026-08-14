@@ -14,13 +14,13 @@ export default function Quote() {
         />
         <div className="absolute inset-0 bg-ink/50" />
         <div className="relative mx-auto w-full max-w-4xl">
-          <p className="animate-rise font-display text-sm font-semibold tracking-[0.24em] text-cyan uppercase">
+          <p className="animate-rise font-display text-sm font-semibold tracking-[0.14em] md:tracking-[0.24em] text-cyan uppercase">
             Contact Us
           </p>
-          <h1 className="animate-rise-delay mt-4 font-display text-4xl font-extrabold tracking-tight md:text-6xl">
+          <h1 className="animate-rise-delay mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl md:text-6xl">
             Let’s Build Something Great
           </h1>
-          <p className="animate-rise-delay-2 mt-6 max-w-3xl text-lg text-white/75 md:text-xl">
+          <p className="animate-rise-delay-2 mt-6 max-w-3xl text-base text-white/75 md:text-xl">
             Tell us a little about your project and we’ll get back to you.
           </p>
         </div>
@@ -31,10 +31,10 @@ export default function Quote() {
         <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-14">
           <div>
             <div className="mb-4 h-1 w-14 rounded-full bg-brand" />
-            <h2 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
+            <h2 className="font-display text-2xl font-bold tracking-tight text-ink md:text-4xl">
               Request a Quote
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-slate">
+            <p className="mt-4 text-base leading-relaxed text-slate md:text-lg">
               Share a few details about your business and goals. We’ll help
               shape the right mix of website design, SEO and PPC.
             </p>
@@ -91,7 +91,7 @@ export default function Quote() {
               </a>
             </div>
 
-            <p className="mt-8 font-display text-lg font-bold tracking-[0.1em]">
+            <p className="mt-8 font-display text-lg font-bold tracking-[0.1em] whitespace-nowrap">
               <span className="text-brand">BUILD</span>
               <span className="text-ink/25">.</span>{' '}
               <span className="text-brand">RANK</span>

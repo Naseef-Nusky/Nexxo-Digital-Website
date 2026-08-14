@@ -227,13 +227,13 @@ export default function WebDesign() {
         />
         <div className="absolute inset-0 bg-ink/50" />
         <div className="relative mx-auto w-full max-w-4xl">
-          <p className="animate-rise font-display text-sm font-semibold tracking-[0.24em] text-cyan uppercase">
+          <p className="animate-rise font-display text-sm font-semibold tracking-[0.14em] md:tracking-[0.24em] text-cyan uppercase">
             Web Design & Development
           </p>
-          <h1 className="animate-rise-delay mt-4 font-display text-4xl font-extrabold tracking-tight md:text-6xl">
+          <h1 className="animate-rise-delay mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl md:text-6xl">
             Websites Built to Generate Leads, Enquiries & More Business
           </h1>
-          <p className="animate-rise-delay-2 mt-6 max-w-3xl text-lg text-white/75 md:text-xl">
+          <p className="animate-rise-delay-2 mt-6 max-w-3xl text-base text-white/75 md:text-xl">
             Your website shouldn’t just look impressive. It should generate
             business.
           </p>
@@ -250,7 +250,7 @@ export default function WebDesign() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
         <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
-          <div className="space-y-6 text-lg leading-relaxed text-slate md:text-xl">
+          <div className="space-y-6 text-base leading-relaxed text-slate md:text-xl">
             <p>
               At Nexxo Digital, we design and develop high-performance, bespoke
               websites with one clear commercial objective: turning more visitors
@@ -276,7 +276,7 @@ export default function WebDesign() {
           <p className="mt-10 font-display text-xl font-bold text-ink md:text-2xl">
             More Traffic. More Enquiries. More Customers.
           </p>
-          <p className="mt-4 font-display text-xl font-bold tracking-[0.12em] md:text-2xl">
+          <p className="mt-4 font-display text-xl font-bold tracking-[0.08em] whitespace-nowrap md:text-2xl md:tracking-[0.12em]">
             <span className="text-brand">BUILD</span>
             <span className="text-ink/25">.</span>{' '}
             <span className="text-brand">RANK</span>
@@ -296,7 +296,7 @@ export default function WebDesign() {
             title="Your Website Should Be Your Best Salesperson"
             subtitle="Open 24 Hours a Day. Built to Generate Opportunities."
           />
-          <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate md:text-xl">
+          <div className="mt-8 space-y-6 text-base leading-relaxed text-slate md:text-xl">
             <p>
               Potential customers are searching online every day for businesses
               like yours.
@@ -324,7 +324,7 @@ export default function WebDesign() {
               </li>
             ))}
           </ul>
-          <div className="mt-10 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+          <div className="mt-10 space-y-5 text-base leading-relaxed text-slate md:text-xl">
             <p>Nexxo Digital designs websites around these decisions.</p>
             <p>
               We combine compelling content, strong calls to action, intelligent
@@ -350,7 +350,7 @@ export default function WebDesign() {
               eyebrow="Lead Generation Website Design"
               title="Designed Around One Thing: Conversion"
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
               <p>
                 A lead generation website has a different purpose from a website
                 that’s simply there to showcase your company.
@@ -369,7 +369,7 @@ export default function WebDesign() {
             </div>
           </div>
           <FeatureList items={conversionFeatures} />
-          <p className="mx-auto mt-10 max-w-3xl text-center text-lg leading-relaxed text-slate md:text-xl">
+          <p className="mx-auto mt-10 max-w-3xl text-center text-base leading-relaxed text-slate md:text-xl">
             We remove unnecessary distractions and make it easy for potential
             customers to take the next step.
           </p>
@@ -386,7 +386,7 @@ export default function WebDesign() {
               title="Built to Turn Visitors Into Leads"
               subtitle="Every Click Should Have a Purpose"
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
               <p>Getting somebody onto your website is only the beginning.</p>
               <p>
                 What happens next determines whether your marketing produces
@@ -430,7 +430,7 @@ export default function WebDesign() {
             title="Bespoke Websites Built With Code"
             subtitle="No Generic Templates. No Restrictions."
           />
-          <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate md:text-xl">
+          <div className="mt-8 space-y-6 text-base leading-relaxed text-slate md:text-xl">
             <p>
               Nexxo Digital takes a development-led approach to website design.
             </p>
@@ -470,7 +470,7 @@ export default function WebDesign() {
               title="Conversion-Focused Web Design"
               subtitle="Good Design Gets Attention. Great Design Gets Action."
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
               <p>A beautiful website is valuable.</p>
               <p>
                 A beautiful website that consistently generates enquiries is
@@ -519,7 +519,7 @@ export default function WebDesign() {
                 </>
               }
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
               <p>
                 A high-converting website becomes considerably more powerful when
                 potential customers can actually find it.
@@ -543,7 +543,7 @@ export default function WebDesign() {
             </div>
           </div>
           <FeatureList items={seoDevItems} />
-          <div className="mx-auto mt-10 max-w-3xl space-y-4 text-center text-lg leading-relaxed text-slate md:text-xl">
+          <div className="mx-auto mt-10 max-w-3xl space-y-4 text-center text-base leading-relaxed text-slate md:text-xl">
             <p>The objective isn’t simply more traffic.</p>
             <p className="font-medium text-ink">
               It’s attracting people who are actively looking for what you sell.
@@ -565,7 +565,7 @@ export default function WebDesign() {
             }
             subtitle="Turn Paid Clicks Into Paying Customers"
           />
-          <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
             <p>
               <ColorGoogle text="If you’re paying Google every time somebody clicks your advert, your website needs to work extremely hard." />
             </p>
@@ -585,7 +585,7 @@ export default function WebDesign() {
             <p className="font-display text-xl font-bold text-ink md:text-2xl">
               PPC Generates the Click. Your Website Generates the Lead.
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-slate">
+            <p className="mt-4 text-base leading-relaxed text-slate md:text-lg">
               Because Nexxo Digital provides both web development and PPC
               management, the two can work together instead of being managed
               independently.
@@ -603,7 +603,7 @@ export default function WebDesign() {
             title="More Leads From Your Existing Traffic"
             subtitle="Sometimes You Don’t Need More Visitors. You Need More From Them."
           />
-          <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
             <p>Imagine two websites each receive 1,000 relevant visitors.</p>
             <p>Website A converts 2% into enquiries.</p>
             <p className="font-medium text-ink">That’s 20 leads.</p>
@@ -631,7 +631,7 @@ export default function WebDesign() {
               title="Landing Pages That Sell"
               subtitle="One Audience. One Message. One Objective."
             />
-            <p className="mt-8 text-lg leading-relaxed text-slate md:text-xl">
+            <p className="mt-8 text-base leading-relaxed text-slate md:text-xl">
               Dedicated landing pages can be extremely effective for lead
               generation.
             </p>
@@ -653,7 +653,7 @@ export default function WebDesign() {
               </div>
             ))}
           </div>
-          <div className="mx-auto mt-10 max-w-3xl space-y-3 text-center text-lg leading-relaxed text-slate md:text-xl">
+          <div className="mx-auto mt-10 max-w-3xl space-y-3 text-center text-base leading-relaxed text-slate md:text-xl">
             <p>Each landing page can have one primary objective:</p>
             <p className="font-display text-xl font-bold text-ink">
               Get the visitor to take action.
@@ -672,7 +672,7 @@ export default function WebDesign() {
               title="Know Where Your Leads Come From"
               subtitle="Track What Actually Generates Business"
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
               <p>
                 Marketing becomes considerably more powerful when you understand
                 what’s producing results.
@@ -688,7 +688,7 @@ export default function WebDesign() {
             </div>
           </div>
           <FeatureList items={trackingItems} />
-          <div className="mx-auto mt-10 max-w-3xl space-y-4 text-center text-lg leading-relaxed text-slate md:text-xl">
+          <div className="mx-auto mt-10 max-w-3xl space-y-4 text-center text-base leading-relaxed text-slate md:text-xl">
             <p>
               This allows SEO, PPC and website decisions to become increasingly
               data driven.
@@ -707,7 +707,7 @@ export default function WebDesign() {
             title="Built for Mobile Leads"
             subtitle="Your Next Customer Could Be Holding Their Phone Right Now"
           />
-          <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
             <p>
               Potential customers increasingly search, compare companies and make
               enquiries directly from their phones.
@@ -735,7 +735,7 @@ export default function WebDesign() {
               </li>
             ))}
           </ul>
-          <p className="mt-10 text-lg leading-relaxed text-slate md:text-xl">
+          <p className="mt-10 text-base leading-relaxed text-slate md:text-xl">
             Because losing a customer simply because your website is frustrating
             on mobile shouldn’t happen.
           </p>
@@ -751,7 +751,7 @@ export default function WebDesign() {
             title="Fast Websites Convert Better"
             subtitle="Don’t Keep Potential Customers Waiting"
           />
-          <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
             <p>
               Every additional obstacle between a visitor and an enquiry creates
               another opportunity for them to leave.
@@ -780,7 +780,7 @@ export default function WebDesign() {
               title="More Than a Website"
               subtitle="Build Your Online Lead Generation System"
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
               <p>
                 The real power of Nexxo Digital comes from bringing your website
                 and marketing together.
@@ -883,7 +883,7 @@ export default function WebDesign() {
               title="Why Businesses Choose Nexxo Digital"
               subtitle="We Think About Revenue, Not Just Design"
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
               <p>We approach websites from a commercial perspective.</p>
               <p>The question isn’t simply:</p>
               <p className="font-display text-xl font-semibold text-ink">
@@ -925,7 +925,7 @@ export default function WebDesign() {
             title="Stop Treating Your Website Like an Online Brochure"
             subtitle="Turn It Into a Lead Generation Machine."
           />
-          <div className="mt-8 space-y-5 text-lg leading-relaxed text-white/75">
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-white/75 md:text-lg">
             <p>Your website should be actively helping your sales team.</p>
             <p>
               It should be attracting potential customers, explaining why they
@@ -943,7 +943,7 @@ export default function WebDesign() {
           <p className="mt-10 font-display text-2xl font-extrabold tracking-tight md:text-3xl">
             DON’T JUST GET ONLINE. GET MORE BUSINESS.
           </p>
-          <p className="mt-4 font-display text-xl font-bold tracking-[0.12em]">
+          <p className="mt-4 font-display text-xl font-bold tracking-[0.08em] whitespace-nowrap md:tracking-[0.12em]">
             <span className="text-brand">BUILD</span>
             <span className="text-white/35">.</span>{' '}
             <span className="text-brand">RANK</span>

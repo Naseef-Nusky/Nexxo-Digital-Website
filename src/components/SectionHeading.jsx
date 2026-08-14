@@ -9,7 +9,7 @@ export default function SectionHeading({
     <div className={className}>
       {eyebrow ? (
         <p
-          className={`font-display text-sm font-semibold tracking-[0.22em] uppercase ${
+          className={`font-display text-xs font-semibold tracking-[0.16em] uppercase md:text-sm md:tracking-[0.22em] ${
             light ? 'text-cyan' : 'text-blue'
           }`}
         >
@@ -18,8 +18,8 @@ export default function SectionHeading({
       ) : null}
       {title ? (
         <h2
-          className={`font-display text-3xl font-bold tracking-tight md:text-5xl ${
-            eyebrow ? 'mt-3' : ''
+          className={`font-display text-2xl font-bold tracking-tight sm:text-3xl md:text-5xl ${
+            eyebrow ? 'mt-2 md:mt-3' : ''
           } ${light ? 'text-white' : 'text-ink'}`}
         >
           {title}
@@ -27,7 +27,7 @@ export default function SectionHeading({
       ) : null}
       {subtitle ? (
         <p
-          className={`mt-4 max-w-3xl text-lg md:text-xl ${
+          className={`mt-3 max-w-3xl text-base leading-relaxed md:mt-4 md:text-xl ${
             light ? 'text-white/75' : 'text-slate'
           }`}
         >

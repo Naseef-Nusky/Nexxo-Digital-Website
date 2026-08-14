@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import { ColorGoogle, GoogleText } from '../components/GoogleText'
-import { centeredCardClass } from '../utils/grid'
+import { centeredCardClassFromMobile } from '../utils/grid'
 
 const ppcIncludes = [
   'Google Search Ads',
@@ -30,13 +30,13 @@ export default function Ppc() {
         />
         <div className="absolute inset-0 bg-ink/50" />
         <div className="relative mx-auto w-full max-w-4xl">
-          <p className="animate-rise font-display text-sm font-semibold tracking-[0.24em] text-cyan uppercase">
+          <p className="animate-rise font-display text-sm font-semibold tracking-[0.14em] md:tracking-[0.24em] text-cyan uppercase">
             <ColorGoogle text="PPC & GOOGLE ADS" />
           </p>
-          <h1 className="animate-rise-delay mt-4 font-display text-4xl font-extrabold tracking-tight md:text-6xl">
+          <h1 className="animate-rise-delay mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl md:text-6xl">
             Get In Front of Customers Ready to Buy
           </h1>
-          <p className="animate-rise-delay-2 mt-6 max-w-3xl text-lg text-white/75 md:text-xl">
+          <p className="animate-rise-delay-2 mt-6 max-w-3xl text-base text-white/75 md:text-xl">
             Want results without waiting for organic rankings to develop?
           </p>
           <Link
@@ -52,7 +52,7 @@ export default function Ppc() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
         <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
-          <div className="space-y-6 text-lg leading-relaxed text-slate md:text-xl">
+          <div className="space-y-6 text-base leading-relaxed text-slate md:text-xl">
             <p>
               <ColorGoogle text="Nexxo Digital creates and manages PPC and Google Ads campaigns designed to put your business in front of potential customers at the moment they’re actively searching for your services." />
             </p>
@@ -82,7 +82,7 @@ export default function Ppc() {
                 </>
               }
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
               <p>
                 SEO builds long-term visibility. PPC can put your business in front
                 of potential customers immediately.
@@ -114,11 +114,11 @@ export default function Ppc() {
               title="Our PPC management includes:"
             />
           </div>
-          <ul className="mt-12 grid gap-3 sm:grid-cols-4 lg:grid-cols-6">
+          <ul className="mt-12 grid grid-cols-2 gap-3 lg:grid-cols-6">
             {ppcIncludes.map((item, index) => (
               <li
                 key={item}
-                className={`flex items-start gap-3 rounded-xl border border-ink/8 bg-white px-4 py-3.5 text-sm text-slate transition duration-300 hover:border-cyan/35 md:text-base ${centeredCardClass(index, ppcIncludes.length)}`}
+                className={`flex items-start gap-3 rounded-xl border border-ink/8 bg-white px-4 py-3.5 text-sm text-slate transition duration-300 hover:border-cyan/35 md:text-base ${centeredCardClassFromMobile(index, ppcIncludes.length)}`}
               >
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
                 <ColorGoogle text={item} />
@@ -132,14 +132,14 @@ export default function Ppc() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,194,255,0.2),transparent_42%),radial-gradient(circle_at_80%_80%,rgba(0,87,255,0.26),transparent_48%)]" />
         <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
-          <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
+          <h2 className="font-display text-2xl font-bold tracking-tight md:text-4xl">
             More Than Clicks. We Focus on Customers.
           </h2>
-          <p className="mt-8 text-lg leading-relaxed text-white/75 md:text-xl">
+          <p className="mt-8 text-base leading-relaxed text-white/75 md:text-xl">
             PPC generates immediate visibility. SEO develops long-term organic
             growth. Your website turns that traffic into enquiries and customers.
           </p>
-          <p className="mt-8 font-display text-xl font-bold tracking-[0.12em] md:text-2xl">
+          <p className="mt-8 font-display text-xl font-bold tracking-[0.08em] whitespace-nowrap md:text-2xl md:tracking-[0.12em]">
             <span className="text-brand">BUILD</span>
             <span className="text-white/35">.</span>{' '}
             <span className="text-brand">RANK</span>

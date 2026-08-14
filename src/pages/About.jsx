@@ -62,13 +62,13 @@ export default function About() {
         />
         <div className="absolute inset-0 bg-ink/50" />
         <div className="relative mx-auto w-full max-w-4xl">
-          <p className="animate-rise font-display text-sm font-semibold tracking-[0.24em] text-cyan uppercase">
+          <p className="animate-rise font-display text-sm font-semibold tracking-[0.14em] md:tracking-[0.24em] text-cyan uppercase">
             About Nexxo Digital
           </p>
-          <h1 className="animate-rise-delay mt-4 font-display text-4xl font-extrabold tracking-tight md:text-6xl">
+          <h1 className="animate-rise-delay mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl md:text-6xl">
             Digital Solutions Built to Grow Businesses
           </h1>
-          <p className="animate-rise-delay-2 mt-6 max-w-3xl text-lg text-white/75 md:text-xl">
+          <p className="animate-rise-delay-2 mt-6 max-w-3xl text-base text-white/75 md:text-xl">
             At Nexxo Digital, we believe digital marketing should do more than
             make your business look good online. It should help your business get
             found, generate enquiries and grow.
@@ -80,7 +80,7 @@ export default function About() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
         <div className="relative mx-auto w-full max-w-3xl text-center">
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
-          <div className="space-y-6 text-lg leading-relaxed text-slate md:text-xl">
+          <div className="space-y-6 text-base leading-relaxed text-slate md:text-xl">
             <p>
               We are a results-focused web design, SEO and PPC agency helping
               businesses build powerful digital foundations and turn their online
@@ -90,7 +90,7 @@ export default function About() {
               <ColorGoogle text="From designing high-performing websites to increasing visibility on Google and managing targeted paid advertising campaigns, everything we do is built around measurable business growth." />
             </p>
           </div>
-          <p className="mt-10 font-display text-2xl font-bold tracking-[0.12em] md:text-3xl">
+          <p className="mt-10 font-display text-xl font-bold tracking-[0.08em] whitespace-nowrap md:text-2xl md:tracking-[0.12em]">
             <span className="text-brand">BUILD</span>
             <span className="text-ink/25">.</span>{' '}
             <span className="text-brand">RANK</span>
@@ -110,7 +110,7 @@ export default function About() {
               eyebrow="More Than a Digital Agency"
               title="We Build Digital Strategies Around Your Business"
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
               <p>
                 No two businesses are exactly the same, so we don’t believe their
                 digital strategies should be either.
@@ -162,10 +162,10 @@ export default function About() {
           <div className="mt-14 grid gap-6 lg:gap-8">
             <article className="rounded-2xl border border-ink/8 bg-white p-6 shadow-[0_18px_40px_-32px_rgba(5,7,13,0.35)] transition duration-300 hover:border-cyan/30 md:p-8 lg:p-10">
               <div className="mb-4 h-1 w-10 rounded-full bg-brand" />
-              <h3 className="font-display text-2xl font-bold text-ink md:text-3xl">
+              <h3 className="font-display text-xl font-bold text-ink md:text-3xl">
                 Website Design — Build a Better Digital Presence
               </h3>
-              <div className="mt-6 space-y-5 text-lg leading-relaxed text-slate">
+              <div className="mt-6 space-y-5 text-base leading-relaxed text-slate md:text-lg">
                 <p>
                   Your website is often the first impression a potential customer
                   gets of your company.
@@ -190,11 +190,11 @@ export default function About() {
 
             <article className="rounded-2xl border border-ink/8 bg-white p-6 shadow-[0_18px_40px_-32px_rgba(5,7,13,0.35)] transition duration-300 hover:border-cyan/30 md:p-8 lg:p-10">
               <div className="mb-4 h-1 w-10 rounded-full bg-brand" />
-              <h3 className="font-display text-2xl font-bold text-ink md:text-3xl">
+              <h3 className="font-display text-xl font-bold text-ink md:text-3xl">
                 Search Engine Optimisation — Rank Where Your Customers Are
                 Searching
               </h3>
-              <div className="mt-6 space-y-5 text-lg leading-relaxed text-slate">
+              <div className="mt-6 space-y-5 text-base leading-relaxed text-slate md:text-lg">
                 <p>
                   <ColorGoogle text="When someone searches Google for the products or services you provide, your business should be visible." />
                 </p>
@@ -221,10 +221,10 @@ export default function About() {
 
             <article className="rounded-2xl border border-ink/8 bg-white p-6 shadow-[0_18px_40px_-32px_rgba(5,7,13,0.35)] transition duration-300 hover:border-cyan/30 md:p-8 lg:p-10">
               <div className="mb-4 h-1 w-10 rounded-full bg-brand" />
-              <h3 className="font-display text-2xl font-bold text-ink md:text-3xl">
+              <h3 className="font-display text-xl font-bold text-ink md:text-3xl">
                 PPC & <GoogleText /> Ads — Reach Customers at the Right Moment
               </h3>
-              <div className="mt-6 space-y-5 text-lg leading-relaxed text-slate">
+              <div className="mt-6 space-y-5 text-base leading-relaxed text-slate md:text-lg">
                 <p>
                   SEO builds long-term visibility. PPC can put your business in
                   front of potential customers immediately.
@@ -257,7 +257,7 @@ export default function About() {
               eyebrow="Why We Created Nexxo Digital"
               title="Digital Marketing Should Be About Business Growth"
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
               <p>
                 <ColorGoogle text="Businesses are constantly being told they need better websites, more content, SEO, Google Ads, social media and countless other digital services." />
               </p>
@@ -324,7 +324,7 @@ export default function About() {
             <h3 className="font-display text-2xl font-bold text-ink">
               {approach[0].title}
             </h3>
-            <p className="mt-4 text-lg leading-relaxed text-slate">
+            <p className="mt-4 text-base leading-relaxed text-slate md:text-lg">
               {approach[0].body}
             </p>
           </div>
@@ -347,7 +347,7 @@ export default function About() {
           <div className="mx-auto mt-12 max-w-3xl text-center">
             <p className="text-lg text-slate md:text-xl">
               That’s what{' '}
-              <span className="font-display font-bold tracking-[0.08em]">
+              <span className="inline whitespace-nowrap font-display font-bold tracking-[0.08em]">
                 <span className="text-brand">BUILD</span>
                 <span className="text-ink/25">.</span>{' '}
                 <span className="text-brand">RANK</span>
@@ -402,7 +402,7 @@ export default function About() {
               eyebrow="One Team. One Strategy. One Goal."
               title="Your Growth."
             />
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-slate md:text-xl">
               <p>A website shouldn’t exist in isolation.</p>
               <p>
                 Neither should your SEO or <GoogleText /> Ads.
@@ -432,7 +432,7 @@ export default function About() {
             ))}
           </div>
 
-          <p className="mx-auto mt-12 max-w-3xl text-center text-lg leading-relaxed text-slate md:text-xl">
+          <p className="mx-auto mt-12 max-w-3xl text-center text-base leading-relaxed text-slate md:text-xl">
             Nexxo Digital connects those elements into one strategy focused on
             helping your business move forward.
           </p>
@@ -449,7 +449,7 @@ export default function About() {
               eyebrow="Who We Work With"
               title="Built for Businesses That Want to Grow"
             />
-            <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate md:text-xl">
+            <div className="mt-8 space-y-6 text-base leading-relaxed text-slate md:text-xl">
               <p>
                 We work with ambitious businesses looking to improve how they
                 attract customers online.
@@ -479,7 +479,7 @@ export default function About() {
         <div className="relative mx-auto max-w-4xl text-center">
           <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading className="text-center" title="The Nexxo Standard" />
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate md:text-xl">
+          <p className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-slate md:text-xl">
             We want every client relationship to be built around four things:
           </p>
 
@@ -499,7 +499,7 @@ export default function About() {
             )}
           </div>
 
-          <div className="mx-auto mt-12 max-w-3xl space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+          <div className="mx-auto mt-12 max-w-3xl space-y-5 text-base leading-relaxed text-slate md:text-xl">
             <p>
               We’re not interested in digital marketing for the sake of digital
               marketing.
@@ -514,13 +514,13 @@ export default function About() {
 
       <section className="px-5 py-20 md:px-8 md:py-28">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="font-display text-sm font-semibold tracking-[0.22em] text-blue uppercase">
+          <p className="font-display text-sm font-semibold tracking-[0.14em] md:tracking-[0.22em] text-blue uppercase">
             Ready to Take Your Business Further?
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-ink md:text-5xl">
             Let’s Build Something That Performs.
           </h2>
-          <div className="mt-8 space-y-4 text-lg leading-relaxed text-slate">
+          <div className="mt-8 space-y-4 text-base leading-relaxed text-slate md:text-lg">
             <p>
               <ColorGoogle text="Whether you need a new website, stronger Google rankings, better-performing PPC campaigns or a complete digital strategy, talk to Nexxo Digital." />
             </p>
@@ -529,7 +529,7 @@ export default function About() {
               it next.
             </p>
           </div>
-          <p className="mt-8 font-display text-xl font-bold tracking-[0.12em] text-ink">
+          <p className="mt-8 font-display text-xl font-bold tracking-[0.12em] text-ink whitespace-nowrap">
             BUILD. RANK. GROW.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">

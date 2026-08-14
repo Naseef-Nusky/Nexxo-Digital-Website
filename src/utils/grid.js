@@ -49,3 +49,27 @@ export function centeredCardClassMd(index, total) {
 
   return classes.join(' ')
 }
+
+/** 2 cols from mobile, 3 cols on lg. Parent: `grid grid-cols-2 lg:grid-cols-6` */
+export function centeredCardClassFromMobile(index, total) {
+  const classes = ['lg:col-span-2']
+
+  const mobileRem = total % 2
+  if (mobileRem === 1 && index === total - 1) {
+    classes.push('col-span-2')
+  }
+
+  const lgRem = total % 3
+  if (lgRem !== 0 && index >= total - lgRem) {
+    const pos = index - (total - lgRem)
+    if (lgRem === 1) {
+      classes.push('lg:col-start-3')
+    } else if (lgRem === 2) {
+      classes.push(pos === 0 ? 'lg:col-start-2' : 'lg:col-start-4')
+    }
+  } else if (mobileRem === 1 && index === total - 1) {
+    classes.push('lg:col-span-2', 'lg:col-start-auto')
+  }
+
+  return classes.join(' ')
+}

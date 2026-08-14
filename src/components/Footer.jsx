@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1fr] md:px-8">
         <div>
           <img src="/Nexxo-Logo.png" alt="Nexxo Digital" className="h-16 w-auto md:h-20" />
-          <p className="mt-5 font-display text-sm font-semibold tracking-[0.22em] text-cyan uppercase">
+          <p className="mt-5 font-display text-sm font-semibold tracking-[0.14em] md:tracking-[0.22em] text-cyan uppercase whitespace-nowrap">
             BUILD. RANK. GROW.
           </p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/65">
