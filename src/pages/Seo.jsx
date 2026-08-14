@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
+import { ColorGoogle, GoogleText } from '../components/GoogleText'
 
 const seoStrategies = [
   {
@@ -51,7 +52,7 @@ export default function Seo() {
             SEO
           </p>
           <h1 className="animate-rise-delay mt-4 font-display text-4xl font-extrabold tracking-tight md:text-6xl">
-            Get Found When Your Customers Search Google
+            Get Found When Your Customers Search <GoogleText />
           </h1>
           <p className="animate-rise-delay-2 mt-6 max-w-3xl text-lg text-white/75 md:text-xl">
             A great website has limited value if nobody can find it.
@@ -71,9 +72,7 @@ export default function Seo() {
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
           <div className="space-y-6 text-lg leading-relaxed text-slate md:text-xl">
             <p>
-              Our SEO services are designed to improve your visibility across
-              Google and help your business appear for searches that can generate
-              genuine customers.
+              <ColorGoogle text="Our SEO services are designed to improve your visibility across Google and help your business appear for searches that can generate genuine customers." />
             </p>
             <p>
               Rather than chasing meaningless traffic numbers, we focus on the
@@ -94,8 +93,7 @@ export default function Seo() {
             />
             <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
               <p>
-                When someone searches Google for the products or services you
-                provide, your business should be visible.
+                <ColorGoogle text="When someone searches Google for the products or services you provide, your business should be visible." />
               </p>
               <p>
                 Our SEO services are designed to increase organic search visibility

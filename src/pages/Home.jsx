@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import QuoteForm from '../components/QuoteForm'
+import { ColorGoogle, GoogleText } from '../components/GoogleText'
 
 const websiteServices = [
   'Bespoke website design',
-  'WordPress development',
+  'Custom development',
   'Responsive mobile design',
   'Landing page design',
   'Website redesigns',
@@ -160,9 +161,7 @@ export default function Home() {
             create digital strategies focused on one thing: growth.
           </p>
           <p>
-            Whether you need a completely new website, want to improve your
-            Google rankings, or need a professionally managed Google Ads
-            campaign generating enquiries, Nexxo Digital can help.
+            <ColorGoogle text="Whether you need a completely new website, want to improve your Google rankings, or need a professionally managed Google Ads campaign generating enquiries, Nexxo Digital can help." />
           </p>
           <p className="font-display text-xl font-bold tracking-tight text-ink md:text-2xl">
             <span className="text-brand">BUILD</span> your presence.{' '}
@@ -181,9 +180,7 @@ export default function Home() {
           />
           <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate">
             <p>
-              Your business needs a website that represents your brand
-              professionally, appears when potential customers search Google and
-              turns those visitors into genuine enquiries.
+              <ColorGoogle text="Your business needs a website that represents your brand professionally, appears when potential customers search Google and turns those visitors into genuine enquiries." />
             </p>
             <p>
               That’s why Nexxo Digital brings web design, SEO and PPC management
@@ -293,14 +290,16 @@ export default function Home() {
             <SectionHeading
               className="text-center"
               eyebrow="SEO"
-              title="Get Found When Your Customers Search Google"
+              title={
+                <>
+                  Get Found When Your Customers Search <GoogleText />
+                </>
+              }
             />
             <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate">
               <p>A great website has limited value if nobody can find it.</p>
               <p>
-                Our SEO services are designed to improve your visibility across
-                Google and help your business appear for searches that can
-                generate genuine customers.
+                <ColorGoogle text="Our SEO services are designed to improve your visibility across Google and help your business appear for searches that can generate genuine customers." />
               </p>
               <p>
                 Rather than chasing meaningless traffic numbers, we focus on the
@@ -365,7 +364,7 @@ export default function Home() {
           <div className="mx-auto max-w-3xl text-center">
             <SectionHeading
               className="text-center"
-              eyebrow="PPC & GOOGLE ADS"
+              eyebrow={<ColorGoogle text="PPC & GOOGLE ADS" />}
               title="Get In Front of Customers Ready to Buy"
             />
             <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate">
@@ -373,9 +372,7 @@ export default function Home() {
                 Want results without waiting for organic rankings to develop?
               </p>
               <p>
-                Nexxo Digital creates and manages PPC and Google Ads campaigns
-                designed to put your business in front of potential customers at
-                the moment they’re actively searching for your services.
+                <ColorGoogle text="Nexxo Digital creates and manages PPC and Google Ads campaigns designed to put your business in front of potential customers at the moment they’re actively searching for your services." />
               </p>
               <p>But generating clicks isn’t the objective.</p>
               <p className="font-display text-xl font-bold tracking-tight text-ink md:text-2xl">
@@ -415,7 +412,7 @@ export default function Home() {
                     </svg>
                   </span>
                   <span className="text-sm font-medium text-ink/85 md:text-base">
-                    {item}
+                    <ColorGoogle text={item} />
                   </span>
                 </li>
               ))}
@@ -565,7 +562,7 @@ export default function Home() {
               title="We Build the Entire Journey"
             />
             <p className="mt-6 text-lg text-white/75 md:text-xl">
-              Someone searches Google.
+              Someone searches <GoogleText />.
             </p>
           </div>
 
@@ -619,10 +616,7 @@ export default function Home() {
               presence.
             </p>
             <p>
-              Whether you’re launching a new company, replacing an outdated
-              website, struggling to rank on Google or looking to generate more
-              enquiries through paid advertising, we’ll build a strategy around
-              where you are today and where you want to go next.
+              <ColorGoogle text="Whether you’re launching a new company, replacing an outdated website, struggling to rank on Google or looking to generate more enquiries through paid advertising, we’ll build a strategy around where you are today and where you want to go next." />
             </p>
             <p>
               From startups and local businesses to established companies looking

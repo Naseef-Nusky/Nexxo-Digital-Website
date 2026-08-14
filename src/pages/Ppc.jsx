@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
+import { ColorGoogle, GoogleText } from '../components/GoogleText'
 
 const ppcIncludes = [
   'Google Search Ads',
@@ -29,7 +30,7 @@ export default function Ppc() {
         <div className="absolute inset-0 bg-ink/50" />
         <div className="relative mx-auto max-w-4xl">
           <p className="animate-rise font-display text-sm font-semibold tracking-[0.24em] text-cyan uppercase">
-            PPC & GOOGLE ADS
+            <ColorGoogle text="PPC & GOOGLE ADS" />
           </p>
           <h1 className="animate-rise-delay mt-4 font-display text-4xl font-extrabold tracking-tight md:text-6xl">
             Get In Front of Customers Ready to Buy
@@ -52,9 +53,7 @@ export default function Ppc() {
           <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
           <div className="space-y-6 text-lg leading-relaxed text-slate md:text-xl">
             <p>
-              Nexxo Digital creates and manages PPC and Google Ads campaigns
-              designed to put your business in front of potential customers at the
-              moment they’re actively searching for your services.
+              <ColorGoogle text="Nexxo Digital creates and manages PPC and Google Ads campaigns designed to put your business in front of potential customers at the moment they’re actively searching for your services." />
             </p>
             <p>But generating clicks isn’t the objective.</p>
             <p className="font-display text-xl font-bold text-ink">
@@ -76,7 +75,11 @@ export default function Ppc() {
             <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
             <SectionHeading
               className="text-center"
-              title="PPC & Google Ads — Reach Customers at the Right Moment"
+              title={
+                <>
+                  PPC & <GoogleText /> Ads — Reach Customers at the Right Moment
+                </>
+              }
             />
             <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
               <p>
@@ -84,9 +87,7 @@ export default function Ppc() {
                 of potential customers immediately.
               </p>
               <p>
-                Our PPC management and Google Ads services are designed around
-                generating qualified traffic, enquiries and sales while making the
-                most of your advertising budget.
+                <ColorGoogle text="Our PPC management and Google Ads services are designed around generating qualified traffic, enquiries and sales while making the most of your advertising budget." />
               </p>
               <p>
                 From keyword and competitor research through to campaign creation,
@@ -119,7 +120,7 @@ export default function Ppc() {
                 className="flex items-start gap-3 rounded-xl border border-ink/8 bg-white px-4 py-3.5 text-sm text-slate transition duration-300 hover:border-cyan/35 md:text-base"
               >
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
-                {item}
+                <ColorGoogle text={item} />
               </li>
             ))}
           </ul>

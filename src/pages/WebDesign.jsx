@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
+import { ColorGoogle, GoogleText } from '../components/GoogleText'
 
 const conversionFeatures = [
   'Prominent enquiry forms',
@@ -150,7 +151,7 @@ const processSteps = [
   {
     num: '05',
     title: 'Develop With Modern Technology',
-    body: 'Our developers build your website using modern coding technologies rather than generic WordPress templates.',
+    body: 'Our developers build your website using modern coding technologies rather than generic templates.',
   },
   {
     num: '06',
@@ -265,9 +266,9 @@ export default function WebDesign() {
               website can be designed around generating opportunities.
             </p>
             <p>
-              We don’t rely on generic WordPress templates or drag-and-drop page
-              builders. Our websites are developed using modern code and advanced
-              web technologies, giving us greater control over performance,
+              We don’t rely on generic templates or drag-and-drop page builders.
+              Our websites are developed using modern code and advanced web
+              technologies, giving us greater control over performance,
               functionality and the customer journey.
             </p>
           </div>
@@ -391,8 +392,7 @@ export default function WebDesign() {
                 results.
               </p>
               <p>
-                At Nexxo Digital, we consider the complete journey from Google
-                search to website enquiry.
+                <ColorGoogle text="At Nexxo Digital, we consider the complete journey from Google search to website enquiry." />
               </p>
             </div>
           </div>
@@ -409,7 +409,7 @@ export default function WebDesign() {
                   {step.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-slate md:text-base">
-                  {step.body}
+                  <ColorGoogle text={step.body} />
                 </p>
               </div>
             ))}
@@ -434,8 +434,8 @@ export default function WebDesign() {
               Nexxo Digital takes a development-led approach to website design.
             </p>
             <p>
-              We don’t rely on generic WordPress themes to produce websites that
-              look like everybody else’s.
+              We don’t rely on generic themes to produce websites that look like
+              everybody else’s.
             </p>
             <p>
               Our websites are developed using modern coding frameworks and
@@ -512,7 +512,11 @@ export default function WebDesign() {
             <SectionHeading
               className="text-center"
               title="SEO-Friendly Websites"
-              subtitle="Generate Leads From Google"
+              subtitle={
+                <>
+                  Generate Leads From <GoogleText />
+                </>
+              }
             />
             <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
               <p>
@@ -553,13 +557,16 @@ export default function WebDesign() {
           <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
             className="text-center"
-            title="Websites Built for Google Ads"
+            title={
+              <>
+                Websites Built for <GoogleText /> Ads
+              </>
+            }
             subtitle="Turn Paid Clicks Into Paying Customers"
           />
           <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
             <p>
-              If you’re paying Google every time somebody clicks your advert,
-              your website needs to work extremely hard.
+              <ColorGoogle text="If you’re paying Google every time somebody clicks your advert, your website needs to work extremely hard." />
             </p>
             <p>Poor landing pages can waste advertising budgets.</p>
             <p>
@@ -567,9 +574,7 @@ export default function WebDesign() {
               around specific campaigns, services and customer searches.
             </p>
             <p>
-              For example, instead of sending every Google Ads visitor to your
-              homepage, we can create a landing page specifically designed around
-              what that person searched for.
+              <ColorGoogle text="For example, instead of sending every Google Ads visitor to your homepage, we can create a landing page specifically designed around what that person searched for." />
             </p>
             <p>The message matches their search.</p>
             <p>The content answers their questions.</p>
@@ -641,7 +646,7 @@ export default function WebDesign() {
               >
                 <div className="mb-4 h-1 w-10 rounded-full bg-brand" />
                 <h3 className="font-display text-xl font-semibold text-ink">
-                  {item.title}
+                  <ColorGoogle text={item.title} />
                 </h3>
                 <p className="mt-3 leading-relaxed text-slate">{item.body}</p>
               </div>
@@ -809,7 +814,9 @@ export default function WebDesign() {
                 <h3 className="font-display text-xl font-bold text-brand">
                   {item.title}
                 </h3>
-                <p className="mt-4 leading-relaxed text-slate">{item.body}</p>
+                <p className="mt-4 leading-relaxed text-slate">
+                  <ColorGoogle text={item.body} />
+                </p>
               </div>
             ))}
           </div>

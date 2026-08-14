@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
+import { ColorGoogle, GoogleText } from '../components/GoogleText'
 
 const approach = [
   {
@@ -85,9 +86,7 @@ export default function About() {
               presence into a genuine source of new customers.
             </p>
             <p>
-              From designing high-performing websites to increasing visibility on
-              Google and managing targeted paid advertising campaigns, everything
-              we do is built around measurable business growth.
+              <ColorGoogle text="From designing high-performing websites to increasing visibility on Google and managing targeted paid advertising campaigns, everything we do is built around measurable business growth." />
             </p>
           </div>
           <p className="mt-10 font-display text-2xl font-bold tracking-[0.12em] md:text-3xl">
@@ -134,9 +133,7 @@ export default function About() {
             <div className="rounded-2xl border border-ink/8 bg-mist/70 p-6 md:p-8">
               <div className="mb-4 h-1 w-10 rounded-full bg-brand" />
               <p className="text-base leading-relaxed text-slate md:text-lg">
-                For others, it means improving existing Google rankings through
-                SEO, generating immediate leads through Google Ads and PPC, or
-                combining all three into a complete digital growth strategy.
+                <ColorGoogle text="For others, it means improving existing Google rankings through SEO, generating immediate leads through Google Ads and PPC, or combining all three into a complete digital growth strategy." />
               </p>
             </div>
           </div>
@@ -179,7 +176,7 @@ export default function About() {
                 </p>
                 <p>
                   Our website design and development services can include bespoke
-                  business websites, WordPress development, e-commerce websites,
+                  business websites, custom development, e-commerce websites,
                   landing pages, website redesigns, mobile optimisation and
                   conversion-focused design.
                 </p>
@@ -198,8 +195,7 @@ export default function About() {
               </h3>
               <div className="mt-6 space-y-5 text-lg leading-relaxed text-slate">
                 <p>
-                  When someone searches Google for the products or services you
-                  provide, your business should be visible.
+                  <ColorGoogle text="When someone searches Google for the products or services you provide, your business should be visible." />
                 </p>
                 <p>
                   Our SEO services are designed to increase organic search
@@ -225,7 +221,7 @@ export default function About() {
             <article className="rounded-2xl border border-ink/8 bg-white p-6 shadow-[0_18px_40px_-32px_rgba(5,7,13,0.35)] transition duration-300 hover:border-cyan/30 md:p-8 lg:p-10">
               <div className="mb-4 h-1 w-10 rounded-full bg-brand" />
               <h3 className="font-display text-2xl font-bold text-ink md:text-3xl">
-                PPC & Google Ads — Reach Customers at the Right Moment
+                PPC & <GoogleText /> Ads — Reach Customers at the Right Moment
               </h3>
               <div className="mt-6 space-y-5 text-lg leading-relaxed text-slate">
                 <p>
@@ -233,9 +229,7 @@ export default function About() {
                   front of potential customers immediately.
                 </p>
                 <p>
-                  Our PPC management and Google Ads services are designed around
-                  generating qualified traffic, enquiries and sales while making
-                  the most of your advertising budget.
+                  <ColorGoogle text="Our PPC management and Google Ads services are designed around generating qualified traffic, enquiries and sales while making the most of your advertising budget." />
                 </p>
                 <p>
                   From keyword and competitor research through to campaign
@@ -264,9 +258,7 @@ export default function About() {
             />
             <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
               <p>
-                Businesses are constantly being told they need better websites, more
-                content, SEO, Google Ads, social media and countless other digital
-                services.
+                <ColorGoogle text="Businesses are constantly being told they need better websites, more content, SEO, Google Ads, social media and countless other digital services." />
               </p>
               <p>
                 But none of those things matter unless they contribute towards a
@@ -411,7 +403,9 @@ export default function About() {
             />
             <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
               <p>A website shouldn’t exist in isolation.</p>
-              <p>Neither should your SEO or Google Ads.</p>
+              <p>
+                Neither should your SEO or <GoogleText /> Ads.
+              </p>
               <p className="font-medium text-ink">
                 When everything works together, your digital presence becomes
                 significantly more powerful.
@@ -527,9 +521,7 @@ export default function About() {
           </h2>
           <div className="mt-8 space-y-4 text-lg leading-relaxed text-slate">
             <p>
-              Whether you need a new website, stronger Google rankings,
-              better-performing PPC campaigns or a complete digital strategy,
-              talk to Nexxo Digital.
+              <ColorGoogle text="Whether you need a new website, stronger Google rankings, better-performing PPC campaigns or a complete digital strategy, talk to Nexxo Digital." />
             </p>
             <p>
               Let’s find out where your business is today — and where we can take
