@@ -136,7 +136,8 @@ export default function Home() {
             <span className="hero-word hero-word-3 text-white/40">.</span>
           </h1>
           <p className="hero-subline mx-auto mt-6 max-w-2xl text-base text-white/80 md:text-xl">
-            Websites That Look Better. Rank Higher. Convert More.
+            Websites That Look Better. Rank Higher.
+            <br className="md:hidden" /> Convert More.
           </p>
           <div className="animate-rise-delay-3 mt-10 flex flex-nowrap items-center justify-center gap-2.5 sm:gap-4">
             <Link
