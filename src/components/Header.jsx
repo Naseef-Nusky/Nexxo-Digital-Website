@@ -42,12 +42,30 @@ export default function Header() {
 
         <button
           type="button"
-          className="rounded-md border border-white/20 px-3 py-2 text-sm text-white md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/20 text-white transition hover:border-cyan hover:text-cyan md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          aria-label="Toggle menu"
+          aria-label={open ? 'Close menu' : 'Open menu'}
         >
-          Menu
+          {open ? (
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+              <path
+                d="M6 6l12 12M18 6 6 18"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          ) : (
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          )}
         </button>
       </div>
 

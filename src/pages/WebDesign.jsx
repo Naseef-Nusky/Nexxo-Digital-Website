@@ -196,26 +196,59 @@ const whyChoose = [
   },
 ]
 
+function FeatureList({ items }) {
+  return (
+    <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {items.map((item) => (
+        <li
+          key={item}
+          className="flex items-start gap-3 rounded-xl border border-ink/8 bg-white px-4 py-3.5 text-sm text-slate md:text-base"
+        >
+          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
+          {item}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 export default function WebDesign() {
   return (
     <main>
       <section className="relative overflow-hidden bg-ink px-5 pt-32 pb-20 text-white md:px-8 md:pt-36 md:pb-28">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(0,194,255,0.28),transparent_42%),radial-gradient(circle_at_82%_12%,rgba(0,87,255,0.4),transparent_48%),linear-gradient(160deg,#000000_0%,#000000_55%,#050505_100%)]" />
+        <img
+          src="/Web-Design-hero-BG.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-ink/50" />
         <div className="relative mx-auto max-w-4xl">
-          <img
-            src="/Nexxo-Logo.png"
-            alt="Nexxo Digital"
-            className="animate-rise h-14 w-auto"
-          />
-          <p className="animate-rise mt-6 font-display text-sm font-semibold tracking-[0.24em] text-cyan uppercase">
+          <p className="animate-rise font-display text-sm font-semibold tracking-[0.24em] text-cyan uppercase">
             Web Design & Development
           </p>
           <h1 className="animate-rise-delay mt-4 font-display text-4xl font-extrabold tracking-tight md:text-6xl">
             Websites Built to Generate Leads, Enquiries & More Business
           </h1>
-          <div className="animate-rise-delay-2 mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-white/75">
-            <p>Your website shouldn’t just look impressive.</p>
-            <p className="font-medium text-white">It should generate business.</p>
+          <p className="animate-rise-delay-2 mt-6 max-w-3xl text-lg text-white/75 md:text-xl">
+            Your website shouldn’t just look impressive. It should generate
+            business.
+          </p>
+          <Link
+            to="/quote"
+            className="mt-10 inline-flex rounded-full bg-brand px-6 py-3.5 text-sm font-bold text-white transition hover:brightness-110"
+          >
+            GET A FREE WEBSITE QUOTE
+          </Link>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <div className="mx-auto mb-6 h-1 w-14 rounded-full bg-brand" />
+          <div className="space-y-6 text-lg leading-relaxed text-slate md:text-xl">
             <p>
               At Nexxo Digital, we design and develop high-performance, bespoke
               websites with one clear commercial objective: turning more visitors
@@ -238,28 +271,30 @@ export default function WebDesign() {
               functionality and the customer journey.
             </p>
           </div>
-          <p className="mt-8 font-display text-xl font-bold text-white">
+          <p className="mt-10 font-display text-xl font-bold text-ink md:text-2xl">
             More Traffic. More Enquiries. More Customers.
           </p>
-          <p className="mt-3 font-display text-lg font-semibold tracking-[0.12em] text-cyan">
-            BUILD. RANK. GROW.
+          <p className="mt-4 font-display text-xl font-bold tracking-[0.12em] md:text-2xl">
+            <span className="text-brand">BUILD</span>
+            <span className="text-ink/25">.</span>{' '}
+            <span className="text-brand">RANK</span>
+            <span className="text-ink/25">.</span>{' '}
+            <span className="text-brand">GROW</span>
+            <span className="text-ink/25">.</span>
           </p>
-          <Link
-            to="/quote"
-            className="mt-8 inline-flex rounded-full bg-brand px-6 py-3.5 text-sm font-bold text-white transition hover:brightness-110"
-          >
-            GET A FREE WEBSITE QUOTE
-          </Link>
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-3xl">
+      <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
+            className="text-center"
             title="Your Website Should Be Your Best Salesperson"
             subtitle="Open 24 Hours a Day. Built to Generate Opportunities."
           />
-          <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate">
+          <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate md:text-xl">
             <p>
               Potential customers are searching online every day for businesses
               like yours.
@@ -271,11 +306,23 @@ export default function WebDesign() {
             <p className="font-medium text-ink">
               A successful website needs to answer three questions quickly:
             </p>
-            <ul className="space-y-2 text-ink">
-              <li>Can you solve their problem?</li>
-              <li>Why should they trust you?</li>
-              <li>What should they do next?</li>
-            </ul>
+          </div>
+          <ul className="mx-auto mt-8 max-w-xl space-y-4 text-left">
+            {[
+              'Can you solve their problem?',
+              'Why should they trust you?',
+              'What should they do next?',
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-4 border-b border-ink/10 pb-4 last:border-b-0 last:pb-0"
+              >
+                <span className="mt-2 h-1 w-8 shrink-0 rounded-full bg-brand" />
+                <span className="text-lg text-ink">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-10 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
             <p>Nexxo Digital designs websites around these decisions.</p>
             <p>
               We combine compelling content, strong calls to action, intelligent
@@ -286,99 +333,103 @@ export default function WebDesign() {
               Because ultimately, website traffic alone doesn’t grow your
               business.
             </p>
-            <p className="font-medium text-ink">Customers do.</p>
+            <p className="font-display text-xl font-bold text-ink">Customers do.</p>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-ink/10 bg-white px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            eyebrow="Lead Generation Website Design"
-            title="Designed Around One Thing: Conversion"
-          />
-          <div className="mt-8 max-w-3xl space-y-6 text-lg leading-relaxed text-slate">
-            <p>
-              A lead generation website has a different purpose from a website
-              that’s simply there to showcase your company.
-            </p>
-            <p>
-              Every page needs to move potential customers closer to taking
-              action.
-            </p>
-            <p>
-              Before designing your website, we look at your business, target
-              customers, competitors and services to understand exactly what
-              motivates somebody to enquire.
-            </p>
-            <p>We then build the website around that journey.</p>
-            <p className="font-medium text-ink">This can include:</p>
+      <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
+        <div className="relative mx-auto max-w-6xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
+            <SectionHeading
+              className="text-center"
+              eyebrow="Lead Generation Website Design"
+              title="Designed Around One Thing: Conversion"
+            />
+            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+              <p>
+                A lead generation website has a different purpose from a website
+                that’s simply there to showcase your company.
+              </p>
+              <p>
+                Every page needs to move potential customers closer to taking
+                action.
+              </p>
+              <p>
+                Before designing your website, we look at your business, target
+                customers, competitors and services to understand exactly what
+                motivates somebody to enquire.
+              </p>
+              <p>We then build the website around that journey.</p>
+              <p className="font-medium text-ink">This can include:</p>
+            </div>
           </div>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {conversionFeatures.map((item) => (
-              <li
-                key={item}
-                className="border-l-2 border-blue/40 pl-4 text-sm text-slate md:text-base"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-slate">
+          <FeatureList items={conversionFeatures} />
+          <p className="mx-auto mt-10 max-w-3xl text-center text-lg leading-relaxed text-slate md:text-xl">
             We remove unnecessary distractions and make it easy for potential
             customers to take the next step.
           </p>
         </div>
       </section>
 
-      <section className="bg-ink px-5 py-20 text-white md:px-8 md:py-28">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            light
-            title="Built to Turn Visitors Into Leads"
-            subtitle="Every Click Should Have a Purpose"
-          />
-          <div className="mt-8 max-w-3xl space-y-6 text-lg leading-relaxed text-white/75">
-            <p>
-              Getting somebody onto your website is only the beginning.
-            </p>
-            <p>
-              What happens next determines whether your marketing produces
-              results.
-            </p>
-            <p>
-              At Nexxo Digital, we consider the complete journey from Google
-              search to website enquiry.
-            </p>
+      <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
+        <div className="relative mx-auto max-w-6xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
+            <SectionHeading
+              className="text-center"
+              title="Built to Turn Visitors Into Leads"
+              subtitle="Every Click Should Have a Purpose"
+            />
+            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+              <p>Getting somebody onto your website is only the beginning.</p>
+              <p>
+                What happens next determines whether your marketing produces
+                results.
+              </p>
+              <p>
+                At Nexxo Digital, we consider the complete journey from Google
+                search to website enquiry.
+              </p>
+            </div>
           </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {journeySteps.map((step) => (
-              <div key={step.num}>
-                <p className="font-display text-sm font-semibold tracking-[0.2em] text-cyan">
+              <div
+                key={step.num}
+                className="rounded-2xl border border-ink/8 bg-white p-5 md:p-6"
+              >
+                <p className="font-display text-sm font-bold tracking-[0.2em] text-cyan">
                   {step.num}
                 </p>
-                <h3 className="mt-3 font-display text-lg font-bold text-white">
+                <h3 className="mt-3 font-display text-lg font-bold text-ink">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/65">
+                <p className="mt-3 text-sm leading-relaxed text-slate md:text-base">
                   {step.body}
                 </p>
               </div>
             ))}
           </div>
-          <p className="mt-12 text-lg text-white/80">
+          <p className="mt-12 text-center text-lg font-medium text-ink md:text-xl">
             That’s how we believe business websites should work.
           </p>
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-3xl">
+      <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
+            className="text-center"
             title="Bespoke Websites Built With Code"
             subtitle="No Generic Templates. No Restrictions."
           />
-          <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate">
+          <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate md:text-xl">
             <p>
               Nexxo Digital takes a development-led approach to website design.
             </p>
@@ -397,7 +448,9 @@ export default function WebDesign() {
               cloud-based technologies.
             </p>
             <p>But technology isn’t the selling point.</p>
-            <p className="font-medium text-ink">The results it enables are.</p>
+            <p className="font-display text-xl font-bold text-ink">
+              The results it enables are.
+            </p>
             <p>
               We use technology to create websites that are fast, professional,
               scalable and designed to generate business.
@@ -406,34 +459,43 @@ export default function WebDesign() {
         </div>
       </section>
 
-      <section className="border-y border-ink/10 bg-white px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            title="Conversion-Focused Web Design"
-            subtitle="Good Design Gets Attention. Great Design Gets Action."
-          />
-          <div className="mt-8 max-w-3xl space-y-6 text-lg leading-relaxed text-slate">
-            <p>A beautiful website is valuable.</p>
-            <p>
-              A beautiful website that consistently generates enquiries is
-              significantly more valuable.
-            </p>
-            <p>
-              That’s why conversion strategy sits at the centre of our web design
-              process.
-            </p>
-            <p>
-              We consider everything from the wording of your headline to where
-              your telephone number appears.
-            </p>
+      <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
+        <div className="relative mx-auto max-w-6xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
+            <SectionHeading
+              className="text-center"
+              title="Conversion-Focused Web Design"
+              subtitle="Good Design Gets Attention. Great Design Gets Action."
+            />
+            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+              <p>A beautiful website is valuable.</p>
+              <p>
+                A beautiful website that consistently generates enquiries is
+                significantly more valuable.
+              </p>
+              <p>
+                That’s why conversion strategy sits at the centre of our web design
+                process.
+              </p>
+              <p>
+                We consider everything from the wording of your headline to where
+                your telephone number appears.
+              </p>
+            </div>
           </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {conversionFocus.map((item) => (
-              <div key={item.title} className="border-t border-ink/10 pt-6">
-                <h3 className="font-display text-lg font-semibold text-white">
+              <div
+                key={item.title}
+                className="rounded-2xl border border-ink/8 bg-white p-5 transition duration-300 hover:border-cyan/35 md:p-6"
+              >
+                <div className="mb-4 h-1 w-10 rounded-full bg-brand" />
+                <h3 className="font-display text-lg font-semibold text-ink">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate">
+                <p className="mt-3 text-sm leading-relaxed text-slate md:text-base">
                   {item.body}
                 </p>
               </div>
@@ -442,45 +504,41 @@ export default function WebDesign() {
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            title="SEO-Friendly Websites"
-            subtitle="Generate Leads From Google"
-          />
-          <div className="mt-8 max-w-3xl space-y-6 text-lg leading-relaxed text-slate">
-            <p>
-              A high-converting website becomes considerably more powerful when
-              potential customers can actually find it.
-            </p>
-            <p>
-              That’s why SEO is considered from the beginning of the website
-              project.
-            </p>
-            <p>
-              We can research what your potential customers are searching for and
-              build your website structure around commercially valuable keywords.
-            </p>
-            <p>
-              Instead of creating five generic pages and trying to optimise them
-              afterwards, we can build dedicated pages around the services and
-              locations that matter to your business.
-            </p>
-            <p className="font-medium text-ink">
-              Our SEO-focused web development can include:
-            </p>
+      <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
+        <div className="relative mx-auto max-w-6xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
+            <SectionHeading
+              className="text-center"
+              title="SEO-Friendly Websites"
+              subtitle="Generate Leads From Google"
+            />
+            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+              <p>
+                A high-converting website becomes considerably more powerful when
+                potential customers can actually find it.
+              </p>
+              <p>
+                That’s why SEO is considered from the beginning of the website
+                project.
+              </p>
+              <p>
+                We can research what your potential customers are searching for and
+                build your website structure around commercially valuable keywords.
+              </p>
+              <p>
+                Instead of creating five generic pages and trying to optimise them
+                afterwards, we can build dedicated pages around the services and
+                locations that matter to your business.
+              </p>
+              <p className="font-medium text-ink">
+                Our SEO-focused web development can include:
+              </p>
+            </div>
           </div>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {seoDevItems.map((item) => (
-              <li
-                key={item}
-                className="border-l-2 border-blue/40 pl-4 text-sm text-slate md:text-base"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 max-w-3xl space-y-4 text-lg leading-relaxed text-slate">
+          <FeatureList items={seoDevItems} />
+          <div className="mx-auto mt-10 max-w-3xl space-y-4 text-center text-lg leading-relaxed text-slate md:text-xl">
             <p>The objective isn’t simply more traffic.</p>
             <p className="font-medium text-ink">
               It’s attracting people who are actively looking for what you sell.
@@ -489,14 +547,16 @@ export default function WebDesign() {
         </div>
       </section>
 
-      <section className="border-y border-ink/10 bg-ink-soft px-5 py-20 text-white md:px-8 md:py-28">
-        <div className="mx-auto max-w-3xl">
+      <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
-            light
+            className="text-center"
             title="Websites Built for Google Ads"
             subtitle="Turn Paid Clicks Into Paying Customers"
           />
-          <div className="mt-8 space-y-6 text-lg leading-relaxed text-white/75">
+          <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
             <p>
               If you’re paying Google every time somebody clicks your advert,
               your website needs to work extremely hard.
@@ -514,10 +574,12 @@ export default function WebDesign() {
             <p>The message matches their search.</p>
             <p>The content answers their questions.</p>
             <p>The call to action gives them an immediate next step.</p>
-            <p className="font-display text-xl font-bold text-white">
+          </div>
+          <div className="mt-10 rounded-2xl border border-cyan/20 bg-white p-6 md:p-8">
+            <p className="font-display text-xl font-bold text-ink md:text-2xl">
               PPC Generates the Click. Your Website Generates the Lead.
             </p>
-            <p>
+            <p className="mt-4 text-lg leading-relaxed text-slate">
               Because Nexxo Digital provides both web development and PPC
               management, the two can work together instead of being managed
               independently.
@@ -526,25 +588,24 @@ export default function WebDesign() {
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-3xl">
+      <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
+            className="text-center"
             title="More Leads From Your Existing Traffic"
             subtitle="Sometimes You Don’t Need More Visitors. You Need More From Them."
           />
-          <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate">
-            <p>
-              Imagine two websites each receive 1,000 relevant visitors.
-            </p>
+          <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+            <p>Imagine two websites each receive 1,000 relevant visitors.</p>
             <p>Website A converts 2% into enquiries.</p>
-            <p>That’s 20 leads.</p>
+            <p className="font-medium text-ink">That’s 20 leads.</p>
             <p>Website B converts 5%.</p>
-            <p>That’s 50 leads.</p>
+            <p className="font-medium text-ink">That’s 50 leads.</p>
             <p>The traffic hasn’t increased.</p>
             <p>But the number of opportunities has more than doubled.</p>
-            <p>
-              This is why conversion rate optimisation is so important.
-            </p>
+            <p>This is why conversion rate optimisation is so important.</p>
             <p>
               Rather than focusing exclusively on attracting more visitors, we
               look for ways to increase the commercial value of the traffic
@@ -554,87 +615,93 @@ export default function WebDesign() {
         </div>
       </section>
 
-      <section className="border-y border-ink/10 bg-white px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            title="Landing Pages That Sell"
-            subtitle="One Audience. One Message. One Objective."
-          />
-          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-slate">
-            Dedicated landing pages can be extremely effective for lead
-            generation.
-          </p>
-          <p className="mt-4 max-w-3xl text-lg font-medium text-ink">
-            We can build pages around:
-          </p>
-          <div className="mt-8 grid gap-8 md:grid-cols-2">
+      <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
+        <div className="relative mx-auto max-w-6xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
+            <SectionHeading
+              className="text-center"
+              title="Landing Pages That Sell"
+              subtitle="One Audience. One Message. One Objective."
+            />
+            <p className="mt-8 text-lg leading-relaxed text-slate md:text-xl">
+              Dedicated landing pages can be extremely effective for lead
+              generation.
+            </p>
+            <p className="mt-4 text-lg font-medium text-ink">
+              We can build pages around:
+            </p>
+          </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
             {landingPageTypes.map((item) => (
-              <div key={item.title} className="border-t border-ink/10 pt-6">
-                <h3 className="font-display text-xl font-semibold text-white">
+              <div
+                key={item.title}
+                className="rounded-2xl border border-ink/8 bg-white p-6 md:p-7"
+              >
+                <div className="mb-4 h-1 w-10 rounded-full bg-brand" />
+                <h3 className="font-display text-xl font-semibold text-ink">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-slate">{item.body}</p>
+                <p className="mt-3 leading-relaxed text-slate">{item.body}</p>
               </div>
             ))}
           </div>
-          <div className="mt-10 max-w-3xl space-y-4 text-lg leading-relaxed text-slate">
+          <div className="mx-auto mt-10 max-w-3xl space-y-3 text-center text-lg leading-relaxed text-slate md:text-xl">
             <p>Each landing page can have one primary objective:</p>
-            <p className="font-medium text-ink">
+            <p className="font-display text-xl font-bold text-ink">
               Get the visitor to take action.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            title="Know Where Your Leads Come From"
-            subtitle="Track What Actually Generates Business"
-          />
-          <div className="mt-8 max-w-3xl space-y-6 text-lg leading-relaxed text-slate">
-            <p>
-              Marketing becomes considerably more powerful when you understand
-              what’s producing results.
-            </p>
-            <p>
-              We can implement appropriate tracking to help businesses understand
-              how visitors interact with their website and which marketing
-              activity generates valuable actions.
-            </p>
-            <p className="font-medium text-ink">
-              Depending on your setup, this can include tracking:
-            </p>
+      <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
+        <div className="relative mx-auto max-w-6xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
+            <SectionHeading
+              className="text-center"
+              title="Know Where Your Leads Come From"
+              subtitle="Track What Actually Generates Business"
+            />
+            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+              <p>
+                Marketing becomes considerably more powerful when you understand
+                what’s producing results.
+              </p>
+              <p>
+                We can implement appropriate tracking to help businesses understand
+                how visitors interact with their website and which marketing
+                activity generates valuable actions.
+              </p>
+              <p className="font-medium text-ink">
+                Depending on your setup, this can include tracking:
+              </p>
+            </div>
           </div>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {trackingItems.map((item) => (
-              <li
-                key={item}
-                className="border-l-2 border-cyan/50 pl-4 text-sm text-slate md:text-base"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 max-w-3xl space-y-4 text-lg leading-relaxed text-slate">
+          <FeatureList items={trackingItems} />
+          <div className="mx-auto mt-10 max-w-3xl space-y-4 text-center text-lg leading-relaxed text-slate md:text-xl">
             <p>
               This allows SEO, PPC and website decisions to become increasingly
               data driven.
             </p>
-            <p>
-              Instead of guessing what’s working, you can start measuring it.
-            </p>
+            <p>Instead of guessing what’s working, you can start measuring it.</p>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-ink/10 bg-white px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-3xl">
+      <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
+            className="text-center"
             title="Built for Mobile Leads"
             subtitle="Your Next Customer Could Be Holding Their Phone Right Now"
           />
-          <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate">
+          <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
             <p>
               Potential customers increasingly search, compare companies and make
               enquiries directly from their phones.
@@ -644,26 +711,41 @@ export default function WebDesign() {
               effectively across mobile, tablet and desktop devices.
             </p>
             <p>We pay particular attention to mobile conversion.</p>
-            <p>Telephone numbers can become tap-to-call buttons.</p>
-            <p>Forms remain simple.</p>
-            <p>Navigation remains clear.</p>
-            <p>Important information remains easy to find.</p>
-            <p>Calls to action remain prominent.</p>
-            <p>
-              Because losing a customer simply because your website is
-              frustrating on mobile shouldn’t happen.
-            </p>
           </div>
+          <ul className="mx-auto mt-8 max-w-xl space-y-4 text-left">
+            {[
+              'Telephone numbers can become tap-to-call buttons.',
+              'Forms remain simple.',
+              'Navigation remains clear.',
+              'Important information remains easy to find.',
+              'Calls to action remain prominent.',
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-4 border-b border-ink/10 pb-4 last:border-b-0 last:pb-0"
+              >
+                <span className="mt-2 h-1 w-8 shrink-0 rounded-full bg-brand" />
+                <span className="text-base text-ink md:text-lg">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-10 text-lg leading-relaxed text-slate md:text-xl">
+            Because losing a customer simply because your website is frustrating
+            on mobile shouldn’t happen.
+          </p>
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-3xl">
+      <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
+            className="text-center"
             title="Fast Websites Convert Better"
             subtitle="Don’t Keep Potential Customers Waiting"
           />
-          <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate">
+          <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
             <p>
               Every additional obstacle between a visitor and an enquiry creates
               another opportunity for them to leave.
@@ -682,59 +764,98 @@ export default function WebDesign() {
         </div>
       </section>
 
-      <section className="bg-ink px-5 py-20 text-white md:px-8 md:py-28">
-        <div className="mx-auto max-w-3xl">
-          <SectionHeading
-            light
-            title="More Than a Website"
-            subtitle="Build Your Online Lead Generation System"
-          />
-          <div className="mt-8 space-y-6 text-lg leading-relaxed text-white/75">
-            <p>
-              The real power of Nexxo Digital comes from bringing your website
-              and marketing together.
-            </p>
-            <p>
-              Rather than building a website and simply hoping customers discover
-              it, we can create the entire strategy.
-            </p>
-            <p className="font-display text-xl font-bold text-cyan">BUILD.</p>
-            <p>
-              We develop a professional, conversion-focused website designed to
-              generate enquiries.
-            </p>
-            <p className="font-display text-xl font-bold text-cyan">RANK.</p>
-            <p>
-              Our SEO campaigns increase your visibility when potential customers
-              search Google.
-            </p>
-            <p className="font-display text-xl font-bold text-cyan">GROW.</p>
-            <p>
-              Our PPC and Google Ads campaigns put your business directly in
-              front of customers searching for your services.
-            </p>
-            <p>Everything works together.</p>
-            <ul className="space-y-2 text-white">
-              <li>SEO + PPC → Traffic</li>
-              <li>Website → Conversion</li>
-              <li>Conversion → Leads</li>
-              <li>Leads → Customers</li>
-              <li>Customers → Growth</li>
-            </ul>
+      <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
+        <div className="relative mx-auto max-w-4xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
+            <SectionHeading
+              className="text-center"
+              title="More Than a Website"
+              subtitle="Build Your Online Lead Generation System"
+            />
+            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+              <p>
+                The real power of Nexxo Digital comes from bringing your website
+                and marketing together.
+              </p>
+              <p>
+                Rather than building a website and simply hoping customers discover
+                it, we can create the entire strategy.
+              </p>
+            </div>
           </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {[
+              {
+                title: 'BUILD',
+                body: 'We develop a professional, conversion-focused website designed to generate enquiries.',
+              },
+              {
+                title: 'RANK',
+                body: 'Our SEO campaigns increase your visibility when potential customers search Google.',
+              },
+              {
+                title: 'GROW',
+                body: 'Our PPC and Google Ads campaigns put your business directly in front of customers searching for your services.',
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-ink/8 bg-white p-6 text-center md:p-7"
+              >
+                <div className="mx-auto mb-4 h-1 w-10 rounded-full bg-brand" />
+                <h3 className="font-display text-xl font-bold text-brand">
+                  {item.title}
+                </h3>
+                <p className="mt-4 leading-relaxed text-slate">{item.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-10 text-center text-lg font-medium text-ink md:text-xl">
+            Everything works together.
+          </p>
+          <ul className="mx-auto mt-6 max-w-md space-y-3 text-center">
+            {[
+              'SEO + PPC → Traffic',
+              'Website → Conversion',
+              'Conversion → Leads',
+              'Leads → Customers',
+              'Customers → Growth',
+            ].map((item) => (
+              <li
+                key={item}
+                className="font-display text-base font-semibold text-ink md:text-lg"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading title="Our Lead Generation Web Design Process" />
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
+      <section className="relative overflow-hidden bg-white px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue/25 to-transparent" />
+        <div className="relative mx-auto max-w-6xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
+            <SectionHeading
+              className="text-center"
+              title="Our Lead Generation Web Design Process"
+            />
+          </div>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
             {processSteps.map((step) => (
-              <div key={step.num} className="border-t border-ink/10 pt-6">
-                <p className="font-display text-sm font-semibold tracking-[0.2em] text-blue">
+              <div
+                key={step.num}
+                className="rounded-2xl border border-ink/8 bg-mist/60 p-5 md:p-6"
+              >
+                <p className="font-display text-sm font-bold tracking-[0.2em] text-cyan">
                   {step.num}
                 </p>
-                <h3 className="mt-2 font-display text-xl font-semibold text-white">
+                <h3 className="mt-2 font-display text-xl font-semibold text-ink">
                   {step.title}
                 </h3>
                 <p className="mt-3 leading-relaxed text-slate">{step.body}</p>
@@ -744,29 +865,40 @@ export default function WebDesign() {
         </div>
       </section>
 
-      <section className="border-y border-ink/10 bg-white px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-6xl">
-          <SectionHeading
-            title="Why Businesses Choose Nexxo Digital"
-            subtitle="We Think About Revenue, Not Just Design"
-          />
-          <div className="mt-8 max-w-3xl space-y-6 text-lg leading-relaxed text-slate">
-            <p>We approach websites from a commercial perspective.</p>
-            <p>The question isn’t simply:</p>
-            <p className="font-medium text-ink">“Does this website look good?”</p>
-            <p>It’s:</p>
-            <p className="font-medium text-ink">
-              “Will this website help generate more business?”
-            </p>
-            <p>That difference influences everything we build.</p>
+      <section className="relative overflow-hidden bg-mist px-5 py-20 md:px-8 md:py-28">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent" />
+        <div className="relative mx-auto max-w-6xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
+            <SectionHeading
+              className="text-center"
+              title="Why Businesses Choose Nexxo Digital"
+              subtitle="We Think About Revenue, Not Just Design"
+            />
+            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate md:text-xl">
+              <p>We approach websites from a commercial perspective.</p>
+              <p>The question isn’t simply:</p>
+              <p className="font-display text-xl font-semibold text-ink">
+                “Does this website look good?”
+              </p>
+              <p>It’s:</p>
+              <p className="font-display text-xl font-semibold text-ink">
+                “Will this website help generate more business?”
+              </p>
+              <p>That difference influences everything we build.</p>
+            </div>
           </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {whyChoose.map((item) => (
-              <div key={item.title} className="border-t border-ink/10 pt-6">
-                <h3 className="font-display text-lg font-semibold text-white">
+              <div
+                key={item.title}
+                className="rounded-2xl border border-ink/8 bg-white p-5 transition duration-300 hover:border-cyan/35 md:p-6"
+              >
+                <div className="mb-4 h-1 w-10 rounded-full bg-brand" />
+                <h3 className="font-display text-lg font-semibold text-ink">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate">
+                <p className="mt-3 text-sm leading-relaxed text-slate md:text-base">
                   {item.body}
                 </p>
               </div>
@@ -775,14 +907,17 @@ export default function WebDesign() {
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto max-w-3xl text-center">
+      <section className="relative overflow-hidden bg-navy px-5 py-20 text-white md:px-8 md:py-28">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,194,255,0.2),transparent_42%),radial-gradient(circle_at_80%_80%,rgba(0,87,255,0.26),transparent_48%)]" />
+        <div className="relative mx-auto max-w-3xl text-center">
+          <div className="mx-auto mb-4 h-1 w-14 rounded-full bg-brand" />
           <SectionHeading
+            className="text-center"
+            light
             title="Stop Treating Your Website Like an Online Brochure"
             subtitle="Turn It Into a Lead Generation Machine."
-            className="text-center [&_p]:mx-auto"
           />
-          <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate">
+          <div className="mt-8 space-y-5 text-lg leading-relaxed text-white/75">
             <p>Your website should be actively helping your sales team.</p>
             <p>
               It should be attracting potential customers, explaining why they
@@ -797,11 +932,16 @@ export default function WebDesign() {
               revenue.
             </p>
           </div>
-          <p className="mt-10 font-display text-2xl font-extrabold tracking-tight text-ink md:text-3xl">
+          <p className="mt-10 font-display text-2xl font-extrabold tracking-tight md:text-3xl">
             DON’T JUST GET ONLINE. GET MORE BUSINESS.
           </p>
-          <p className="mt-4 font-display text-xl font-bold tracking-[0.12em] text-blue">
-            BUILD. RANK. GROW.
+          <p className="mt-4 font-display text-xl font-bold tracking-[0.12em]">
+            <span className="text-brand">BUILD</span>
+            <span className="text-white/35">.</span>{' '}
+            <span className="text-brand">RANK</span>
+            <span className="text-white/35">.</span>{' '}
+            <span className="text-brand">GROW</span>
+            <span className="text-white/35">.</span>
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
@@ -812,7 +952,7 @@ export default function WebDesign() {
             </Link>
             <Link
               to="/quote"
-              className="rounded-full border border-ink/20 px-6 py-3.5 text-sm font-semibold text-ink transition hover:border-ink hover:bg-ink/5"
+              className="rounded-full border border-white/25 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/5"
             >
               SPEAK TO NEXXO DIGITAL
             </Link>

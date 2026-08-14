@@ -1,10 +1,19 @@
 import { Link } from 'react-router-dom'
 import { contact } from '../data/contact'
 
+const quickLinks = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/web-design', label: 'Web Design' },
+  { to: '/seo', label: 'SEO' },
+  { to: '/ppc', label: 'PPC' },
+  { to: '/quote', label: 'Request a Quote' },
+]
+
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-navy text-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.2fr_1fr_1fr] md:px-8">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1fr] md:px-8">
         <div>
           <img src="/Nexxo-Logo.png" alt="Nexxo Digital" className="h-16 w-auto md:h-20" />
           <p className="mt-5 font-display text-sm font-semibold tracking-[0.22em] text-cyan uppercase">
@@ -15,6 +24,30 @@ export default function Footer() {
             agency helping businesses build a stronger online presence and
             generate more customers.
           </p>
+          <Link
+            to="/quote"
+            className="mt-6 inline-flex rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+          >
+            Get a Free Quote
+          </Link>
+        </div>
+
+        <div>
+          <h3 className="font-display text-sm font-semibold tracking-[0.18em] text-white/50 uppercase">
+            Quick Links
+          </h3>
+          <ul className="mt-4 space-y-3 text-sm text-white/80">
+            {quickLinks.map((link) => (
+              <li key={link.to}>
+                <Link
+                  to={link.to}
+                  className="transition hover:text-cyan"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div>
@@ -74,46 +107,7 @@ export default function Footer() {
                 </span>
               </a>
             </li>
-            <li>
-              <Link
-                to="/quote"
-                className="flex items-center gap-3 transition hover:text-cyan"
-              >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan/15 text-cyan">
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
-                    <path
-                      d="M5 12h14M13 6l6 6-6 6"
-                      stroke="currentColor"
-                      strokeWidth="1.7"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-                <span>
-                  <span className="block text-xs tracking-[0.14em] text-white/45 uppercase">
-                    Enquiry
-                  </span>
-                  Request a Quote
-                </span>
-              </Link>
-            </li>
           </ul>
-        </div>
-
-        <div>
-          <h3 className="font-display text-sm font-semibold tracking-[0.18em] text-white/50 uppercase">
-            Get Started
-          </h3>
-          <p className="mt-4 text-sm leading-relaxed text-white/65">
-            Tell us about your business and where you want to grow.
-          </p>
-          <Link
-            to="/quote"
-            className="mt-5 inline-flex rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
-          >
-            Get a Free Quote
-          </Link>
         </div>
       </div>
 
