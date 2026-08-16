@@ -10,8 +10,15 @@ const needOptions = [
   'Not sure yet',
 ]
 
+const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5050').replace(
+  /\/$/,
+  ''
+)
+
 export default function QuoteForm({ variant = 'light' }) {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
   const dark = variant === 'dark'
 
   const fieldClass = dark
@@ -24,9 +31,47 @@ export default function QuoteForm({ variant = 'light' }) {
 
   const optionClass = dark ? 'bg-[#071525] text-white' : 'bg-white text-ink'
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    setSubmitted(true)
+    setError('')
+    setSubmitting(true)
+
+    const form = e.currentTarget
+    const data = new FormData(form)
+
+    const payload = {
+      name: String(data.get('name') || '').trim(),
+      business: String(data.get('business') || '').trim(),
+      email: String(data.get('email') || '').trim(),
+      telephone: String(data.get('telephone') || '').trim(),
+      need: String(data.get('need') || '').trim(),
+      project: String(data.get('project') || '').trim(),
+      source: 'website',
+    }
+
+    try {
+      const response = await fetch(`${API_URL}/api/quote`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      const result = await response.json().catch(() => ({}))
+
+      if (!response.ok || !result.ok) {
+        const message =
+          result.error ||
+          (Array.isArray(result.errors) ? result.errors.join(' ') : null) ||
+          'Unable to send your request. Please try again.'
+        throw new Error(message)
+      }
+
+      setSubmitted(true)
+    } catch (err) {
+      setError(err.message || 'Unable to send your request. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   if (submitted) {
@@ -172,11 +217,21 @@ export default function QuoteForm({ variant = 'light' }) {
           />
         </label>
 
+        {error ? (
+          <p
+            className={`mt-4 text-sm ${dark ? 'text-red-300' : 'text-red-600'}`}
+            role="alert"
+          >
+            {error}
+          </p>
+        ) : null}
+
         <button
           type="submit"
-          className="mt-6 inline-flex w-full items-center justify-center btn-brand rounded-full px-7 py-3.5 text-sm font-bold text-white sm:mt-7 md:w-auto"
+          disabled={submitting}
+          className="mt-6 inline-flex w-full items-center justify-center btn-brand rounded-full px-7 py-3.5 text-sm font-bold text-white disabled:cursor-not-allowed disabled:opacity-70 sm:mt-7 md:w-auto"
         >
-          Request a Quote
+          {submitting ? 'Sending…' : 'Request a Quote'}
         </button>
       </div>
     </form>
