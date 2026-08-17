@@ -67,6 +67,9 @@ export default function QuoteForm({ variant = 'light' }) {
       }
 
       setSubmitted(true)
+      window.setTimeout(() => {
+        window.location.reload()
+      }, 2000)
     } catch (err) {
       setError(err.message || 'Unable to send your request. Please try again.')
     } finally {
@@ -207,9 +210,9 @@ export default function QuoteForm({ variant = 'light' }) {
         </label>
 
         <label className={`mt-4 md:mt-5 ${labelClass}`}>
-          Tell us about your project <span className="text-cyan">*</span>
+          Tell us about your project{' '}
+          <span className={dark ? 'text-white/40' : 'text-slate/70'}>(optional)</span>
           <textarea
-            required
             name="project"
             rows={4}
             placeholder="Share a few details about your goals..."
