@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { contact } from '../data/contact'
+import { contact, legal } from '../data/contact'
 
 const quickLinks = [
   { to: '/', label: 'Home' },
@@ -112,7 +112,13 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-white/45 md:px-8">
-        © {new Date().getFullYear()} Nexxo Digital. All rights reserved.
+        <div className="space-y-1 leading-relaxed">
+          <p className="md:whitespace-nowrap">{legal.tradingNameLine}</p>
+          <p>{legal.companyNumberLine}</p>
+        </div>
+        <p className="mt-3">
+          © {new Date().getFullYear()} Nexxo Digital. All rights reserved.
+        </p>
       </div>
     </footer>
   )
