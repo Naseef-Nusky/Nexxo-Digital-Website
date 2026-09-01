@@ -6,6 +6,7 @@ import WebDesign from './pages/WebDesign'
 import Seo from './pages/Seo'
 import Ppc from './pages/Ppc'
 import Quote from './pages/Quote'
+import ThankYou from './pages/ThankYou'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/seo" element={<Seo />} />
           <Route path="/ppc" element={<Ppc />} />
           <Route path="/quote" element={<Quote />} />
+          <Route path="/thanks" element={<ThankYou />} />
         </Route>
       </Routes>
     </BrowserRouter>

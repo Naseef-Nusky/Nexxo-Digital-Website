@@ -11,7 +11,7 @@ export default function Layout() {
   }, [pathname])
 
   return (
-    <div className="min-h-screen bg-mist">
+    <div className="flex min-h-screen flex-col bg-mist">
       <Header />
       <Outlet />
       <Footer />

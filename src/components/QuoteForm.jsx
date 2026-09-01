@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const needOptions = [
   'Website Design',
@@ -16,7 +17,7 @@ const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5050').replac
 )
 
 export default function QuoteForm({ variant = 'light' }) {
-  const [submitted, setSubmitted] = useState(false)
+  const navigate = useNavigate()
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
   const dark = variant === 'dark'
@@ -66,49 +67,12 @@ export default function QuoteForm({ variant = 'light' }) {
         throw new Error(message)
       }
 
-      setSubmitted(true)
-      window.setTimeout(() => {
-        window.location.reload()
-      }, 2000)
+      navigate('/thanks')
     } catch (err) {
       setError(err.message || 'Unable to send your request. Please try again.')
     } finally {
       setSubmitting(false)
     }
-  }
-
-  if (submitted) {
-    return (
-      <div
-        className={
-          dark
-            ? 'rounded-2xl border border-white/10 bg-[#071525] p-8 text-center shadow-[0_24px_60px_-30px_rgba(0,0,0,0.55)] md:p-10'
-            : 'rounded-2xl border border-ink/8 bg-white p-8 text-center shadow-[0_18px_40px_-28px_rgba(5,7,13,0.2)] md:p-10'
-        }
-      >
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-brand">
-          <svg viewBox="0 0 24 24" className="h-7 w-7 text-white" fill="none" aria-hidden="true">
-            <path
-              d="M5 13l4 4L19 7"
-              stroke="currentColor"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-        <h3
-          className={`mt-5 font-display text-xl font-bold md:text-3xl ${
-            dark ? 'text-white' : 'text-ink'
-          }`}
-        >
-          Thank you
-        </h3>
-        <p className={`mt-3 ${dark ? 'text-white/70' : 'text-slate'}`}>
-          We’ve received your request and will be in touch shortly.
-        </p>
-      </div>
-    )
   }
 
   return (
